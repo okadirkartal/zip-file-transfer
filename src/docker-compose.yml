@@ -1,0 +1,17 @@
+version: '3.6'
+
+services:
+  recipient:
+    image: ${DOCKER_REGISTRY-}recipient
+    build:
+      context: Recipient
+      dockerfile: Dockerfile
+
+  sender:
+    image: ${DOCKER_REGISTRY-}sender
+    environment:
+    - RecipientAPI=https://recipientapi
+    build:
+      context: .
+      dockerfile: Sender\Dockerfile
+      
