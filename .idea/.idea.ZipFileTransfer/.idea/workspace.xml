@@ -5,114 +5,15 @@
     <bookmark url="file://$PROJECT_DIR$/src/Core/DataAccess/Contracts/IDocumentPersistenceService.cs" line="0" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df22de9c-84c7-44fd-89a4-6705dec6c7ee" name="Default Changelist" comment="first">
-      <change afterPath="$PROJECT_DIR$/src/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Recipient/DockerFile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Sender/DockerFile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Sender/uploads/zipFiles/___ZipTransfer20190519235130.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/docker-compose.yml" afterDir="false" />
+    <list default="true" id="df22de9c-84c7-44fd-89a4-6705dec6c7ee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ZipFileTransfer/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ZipFileTransfer/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ZipFileTransfer/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ZipFileTransfer/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ZipFileTransfer.sln" beforeDir="false" afterPath="$PROJECT_DIR$/ZipFileTransfer.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/Common/obj/Debug/netcoreapp2.2/Common.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Common/obj/Debug/netcoreapp2.2/Common.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/Common/obj/Debug/netcoreapp2.2/Common.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Common/obj/Debug/netcoreapp2.2/Common.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/Common/obj/Debug/netcoreapp2.2/Common.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Common/obj/Debug/netcoreapp2.2/Common.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/DataAccess/obj/Debug/netcoreapp2.2/DataAccess.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/DataAccess/obj/Debug/netcoreapp2.2/DataAccess.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/DataAccess/obj/Debug/netcoreapp2.2/DataAccess.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/DataAccess/obj/Debug/netcoreapp2.2/DataAccess.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/Entities/obj/Debug/netcoreapp2.2/Entities.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Entities/obj/Debug/netcoreapp2.2/Entities.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/Entities/obj/Debug/netcoreapp2.2/Entities.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Entities/obj/Debug/netcoreapp2.2/Entities.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/Entities/obj/Debug/netcoreapp2.2/Entities.csprojAssemblyReference.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/Network/obj/Debug/netcoreapp2.2/Network.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Network/obj/Debug/netcoreapp2.2/Network.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/Network/obj/Debug/netcoreapp2.2/Network.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Network/obj/Debug/netcoreapp2.2/Network.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/ZipManagementService/DirectoryModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/ZipManagementService/DirectoryModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/ZipManagementService/bin/Debug/netcoreapp2.2/ZipManagementService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/ZipManagementService/bin/Debug/netcoreapp2.2/ZipManagementService.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/ZipManagementService/bin/Debug/netcoreapp2.2/ZipManagementService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/ZipManagementService/bin/Debug/netcoreapp2.2/ZipManagementService.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/ZipManagementService/obj/Debug/netcoreapp2.2/ZipManagementService.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/ZipManagementService/obj/Debug/netcoreapp2.2/ZipManagementService.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/ZipManagementService/obj/Debug/netcoreapp2.2/ZipManagementService.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/ZipManagementService/obj/Debug/netcoreapp2.2/ZipManagementService.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/ZipManagementService/obj/Debug/netcoreapp2.2/ZipManagementService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/ZipManagementService/obj/Debug/netcoreapp2.2/ZipManagementService.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/ZipManagementService/obj/Debug/netcoreapp2.2/ZipManagementService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/ZipManagementService/obj/Debug/netcoreapp2.2/ZipManagementService.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Recipient/Data/Documents.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recipient/Data/Documents.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Recipient/obj/Debug/netcoreapp2.2/Recipient.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recipient/obj/Debug/netcoreapp2.2/Recipient.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Recipient/obj/Debug/netcoreapp2.2/Recipient.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recipient/obj/Debug/netcoreapp2.2/Recipient.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Recipient/obj/Debug/netcoreapp2.2/Recipient.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recipient/obj/Debug/netcoreapp2.2/Recipient.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/Authenticator/obj/Debug/netcoreapp2.2/Authenticator.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/Authenticator/obj/Debug/netcoreapp2.2/Authenticator.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/Authenticator/obj/Debug/netcoreapp2.2/Authenticator.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/Authenticator/obj/Debug/netcoreapp2.2/Authenticator.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/Cryptor/obj/Debug/netcoreapp2.2/Cryptor.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/Cryptor/obj/Debug/netcoreapp2.2/Cryptor.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/Cryptor/obj/Debug/netcoreapp2.2/Cryptor.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/Cryptor/obj/Debug/netcoreapp2.2/Cryptor.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sender/Sender.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sender/Sender.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sender/Views/Sender/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sender/Views/Sender/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sender/bin/Debug/netcoreapp2.2/Sender.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sender/bin/Debug/netcoreapp2.2/Sender.Views.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sender/bin/Debug/netcoreapp2.2/Sender.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sender/bin/Debug/netcoreapp2.2/Sender.Views.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sender/bin/Debug/netcoreapp2.2/Sender.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sender/bin/Debug/netcoreapp2.2/Sender.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sender/bin/Debug/netcoreapp2.2/Sender.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sender/bin/Debug/netcoreapp2.2/Sender.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sender/bin/Debug/netcoreapp2.2/ZipManagementService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sender/bin/Debug/netcoreapp2.2/ZipManagementService.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sender/bin/Debug/netcoreapp2.2/ZipManagementService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sender/bin/Debug/netcoreapp2.2/ZipManagementService.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sender/obj/Debug/netcoreapp2.2/Sender.AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sender/obj/Debug/netcoreapp2.2/Sender.AssemblyInfoInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sender/obj/Debug/netcoreapp2.2/Sender.RazorTargetAssemblyInfo.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sender/obj/Debug/netcoreapp2.2/Sender.RazorTargetAssemblyInfo.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sender/obj/Debug/netcoreapp2.2/Sender.RazorTargetAssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sender/obj/Debug/netcoreapp2.2/Sender.RazorTargetAssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sender/obj/Debug/netcoreapp2.2/Sender.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sender/obj/Debug/netcoreapp2.2/Sender.Views.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sender/obj/Debug/netcoreapp2.2/Sender.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sender/obj/Debug/netcoreapp2.2/Sender.Views.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sender/obj/Debug/netcoreapp2.2/Sender.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sender/obj/Debug/netcoreapp2.2/Sender.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sender/obj/Debug/netcoreapp2.2/Sender.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sender/obj/Debug/netcoreapp2.2/Sender.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sender/obj/Debug/netcoreapp2.2/Sender.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sender/obj/Debug/netcoreapp2.2/Sender.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sender/obj/Debug/netcoreapp2.2/Sender.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sender/obj/Debug/netcoreapp2.2/Sender.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sender/obj/Sender.csproj.nuget.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sender/obj/Sender.csproj.nuget.g.props" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sender/obj/Sender.csproj.nuget.g.targets" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sender/wwwroot/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sender/wwwroot/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CyptoTests/bin/Debug/netcoreapp2.2/Common.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CyptoTests/bin/Debug/netcoreapp2.2/Common.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CyptoTests/bin/Debug/netcoreapp2.2/Cryptor.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CyptoTests/bin/Debug/netcoreapp2.2/Cryptor.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CyptoTests/bin/Debug/netcoreapp2.2/CyptoTests.deps.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CyptoTests/bin/Debug/netcoreapp2.2/CyptoTests.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CyptoTests/bin/Debug/netcoreapp2.2/CyptoTests.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CyptoTests/bin/Debug/netcoreapp2.2/CyptoTests.runtimeconfig.dev.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CyptoTests/bin/Debug/netcoreapp2.2/CyptoTests.runtimeconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CyptoTests/bin/Debug/netcoreapp2.2/Entities.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CyptoTests/bin/Debug/netcoreapp2.2/Entities.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CyptoTests/bin/Debug/netcoreapp2.2/NUnit3.TestAdapter.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CyptoTests/bin/Debug/netcoreapp2.2/NUnit3.TestAdapter.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CyptoTests/bin/Debug/netcoreapp2.2/nunit.engine.netstandard.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CyptoTests/bin/Debug/netcoreapp2.2/nunit_random_seed.tmp" beforeDir="false" afterPath="$PROJECT_DIR$/test/CyptoTests/bin/Debug/netcoreapp2.2/nunit_random_seed.tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CyptoTests/obj/Debug/netcoreapp2.2/CyptoTests.AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CyptoTests/obj/Debug/netcoreapp2.2/CyptoTests.AssemblyInfoInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CyptoTests/obj/Debug/netcoreapp2.2/CyptoTests.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/test/CyptoTests/obj/Debug/netcoreapp2.2/CyptoTests.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CyptoTests/obj/Debug/netcoreapp2.2/CyptoTests.csproj.CopyComplete" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CyptoTests/obj/Debug/netcoreapp2.2/CyptoTests.csproj.CoreCompileInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CyptoTests/obj/Debug/netcoreapp2.2/CyptoTests.csproj.FileListAbsolute.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CyptoTests/obj/Debug/netcoreapp2.2/CyptoTests.csprojAssemblyReference.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CyptoTests/obj/Debug/netcoreapp2.2/CyptoTests.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CyptoTests/obj/Debug/netcoreapp2.2/CyptoTests.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/bin/Debug/netcoreapp2.2/Common.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/bin/Debug/netcoreapp2.2/Common.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/bin/Debug/netcoreapp2.2/Cryptor.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/bin/Debug/netcoreapp2.2/Cryptor.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/bin/Debug/netcoreapp2.2/DataAccess.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/bin/Debug/netcoreapp2.2/DataAccess.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/bin/Debug/netcoreapp2.2/Entities.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/bin/Debug/netcoreapp2.2/Entities.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/bin/Debug/netcoreapp2.2/NUnit3.TestAdapter.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/bin/Debug/netcoreapp2.2/NUnit3.TestAdapter.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/bin/Debug/netcoreapp2.2/RepositoryTests.deps.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/bin/Debug/netcoreapp2.2/RepositoryTests.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/bin/Debug/netcoreapp2.2/RepositoryTests.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/bin/Debug/netcoreapp2.2/RepositoryTests.runtimeconfig.dev.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/bin/Debug/netcoreapp2.2/RepositoryTests.runtimeconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/bin/Debug/netcoreapp2.2/ZipManagementService.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/bin/Debug/netcoreapp2.2/ZipManagementService.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/bin/Debug/netcoreapp2.2/nunit.engine.netstandard.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/bin/Debug/netcoreapp2.2/nunit_random_seed.tmp" beforeDir="false" afterPath="$PROJECT_DIR$/test/RepositoryTests/bin/Debug/netcoreapp2.2/nunit_random_seed.tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/obj/Debug/netcoreapp2.2/RepositoryTests.AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/obj/Debug/netcoreapp2.2/RepositoryTests.AssemblyInfoInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/obj/Debug/netcoreapp2.2/RepositoryTests.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/test/RepositoryTests/obj/Debug/netcoreapp2.2/RepositoryTests.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/obj/Debug/netcoreapp2.2/RepositoryTests.csproj.CopyComplete" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/obj/Debug/netcoreapp2.2/RepositoryTests.csproj.CoreCompileInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/obj/Debug/netcoreapp2.2/RepositoryTests.csproj.FileListAbsolute.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/obj/Debug/netcoreapp2.2/RepositoryTests.csprojAssemblyReference.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/obj/Debug/netcoreapp2.2/RepositoryTests.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/obj/Debug/netcoreapp2.2/RepositoryTests.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ZipFileTransfer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ZipFileTransfer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/README" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/DocumentPersistenceTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/test/RepositoryTests/DocumentPersistenceTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/RepositoryTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/test/RepositoryTests/RepositoryTests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/SenderControllerTests/SenderControllerTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/test/SenderControllerTests/SenderControllerTests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/ZipFileManagementTests/ZipFileManagementTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/test/ZipFileManagementTests/ZipFileManagementTests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/ZipFileManagementTests/zipFilestest.zip" beforeDir="false" afterPath="$PROJECT_DIR$/test/ZipFileManagementTests/zipFilestest.zip" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -135,9 +36,10 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="DockerFile" value="6" />
-          <entry key="cs" value="164" />
+          <entry key="README" value="1" />
+          <entry key="cs" value="167" />
           <entry key="cshtml" value="18" />
-          <entry key="csproj" value="65" />
+          <entry key="csproj" value="71" />
           <entry key="css" value="2" />
           <entry key="db" value="2" />
           <entry key="dockerignore" value="1" />
@@ -146,34 +48,35 @@
           <entry key="html" value="3" />
           <entry key="ico" value="2" />
           <entry key="js" value="2" />
-          <entry key="json" value="26" />
-          <entry key="sln" value="10" />
+          <entry key="json" value="27" />
+          <entry key="sln" value="11" />
           <entry key="targets" value="1" />
           <entry key="yml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="C#" value="164" />
+          <entry key="C#" value="167" />
           <entry key="CSS" value="2" />
-          <entry key="Csproj" value="65" />
+          <entry key="Csproj" value="71" />
           <entry key="HTML" value="3" />
           <entry key="Image" value="3" />
-          <entry key="JSON" value="26" />
+          <entry key="JSON" value="27" />
           <entry key="JavaScript" value="2" />
           <entry key="MsBuild targets file" value="1" />
-          <entry key="PLAIN_TEXT" value="11" />
+          <entry key="PLAIN_TEXT" value="12" />
           <entry key="Razor" value="18" />
-          <entry key="Solution File" value="10" />
+          <entry key="Solution File" value="11" />
           <entry key="YAML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="DockerFile" value="268" />
-          <entry key="cs" value="4263" />
+          <entry key="README" value="382" />
+          <entry key="cs" value="4264" />
           <entry key="cshtml" value="387" />
-          <entry key="csproj" value="8" />
+          <entry key="csproj" value="11" />
           <entry key="css" value="3" />
           <entry key="dockerignore" value="1" />
           <entry key="html" value="278" />
@@ -184,12 +87,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="4263" />
+          <entry key="C#" value="4264" />
           <entry key="CSS" value="3" />
-          <entry key="Csproj" value="8" />
+          <entry key="Csproj" value="11" />
           <entry key="HTML" value="278" />
           <entry key="JSON" value="36" />
-          <entry key="PLAIN_TEXT" value="299" />
+          <entry key="PLAIN_TEXT" value="681" />
           <entry key="Razor" value="387" />
           <entry key="YAML" value="174" />
         </counts>
@@ -199,39 +102,44 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Sender/Sender.csproj">
+        <entry file="file://$PROJECT_DIR$/README">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
+            <state relative-caret-position="120">
+              <caret line="8" column="1" selection-end-line="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Sender/Views/Sender/Index.cshtml">
+        <entry file="file://$PROJECT_DIR$/test/CyptoTests/CyptoTests.csproj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
-              <folding>
-                <marker date="1558311178722" expanded="true" signature="37:87" ph="@..." />
-                <marker date="1558311178722" expanded="true" signature="92:2266" ph="&lt;main.../&gt;" />
-                <marker date="1558311178722" expanded="true" signature="122:2256" ph="&lt;div.../&gt;" />
-                <marker date="1558311178722" expanded="true" signature="153:2245" ph="&lt;div.../&gt;" />
-                <marker date="1558311178722" expanded="true" signature="206:2234" ph="&lt;div.../&gt;" />
-                <marker date="1558311178722" expanded="true" signature="245:2219" ph="&lt;div.../&gt;" />
-                <marker date="1558311178722" expanded="true" signature="355:2200" ph="&lt;div.../&gt;" />
-                <marker date="1558311178722" expanded="true" signature="403:2177" ph="&lt;form.../&gt;" />
-                <marker date="1558311178722" expanded="true" signature="482:883" ph="&lt;div.../&gt;" />
-                <marker date="1558311178722" expanded="true" signature="661:848" ph="&lt;div.../&gt;" />
-                <marker date="1558311178722" expanded="true" signature="913:1307" ph="&lt;div.../&gt;" />
-                <marker date="1558311178722" expanded="true" signature="1091:1272" ph="&lt;div.../&gt;" />
-                <marker date="1558311178722" expanded="true" signature="1365:1756" ph="&lt;div.../&gt;" />
-                <marker date="1558311178722" expanded="true" signature="1538:1721" ph="&lt;div.../&gt;" />
-                <marker date="1558311178722" expanded="true" signature="1803:2125" ph="&lt;div.../&gt;" />
-                <marker date="1558311178722" expanded="true" signature="1870:2057" ph="&lt;button.../&gt;" />
-              </folding>
+            <state relative-caret-position="75">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/RepositoryTests/RepositoryTests.csproj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/SenderControllerTests/SenderControllerTests.csproj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/TransferserviceTests/TransferserviceTests.csproj">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -243,20 +151,58 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/ZipFileManagementTests/ZipFileManagementTests.csproj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ZipFileTransfer.sln">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="26" column="26" lean-forward="true" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+            <state relative-caret-position="325">
+              <caret line="25" column="47" lean-forward="true" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+        <entry file="file://$PROJECT_DIR$/test/RepositoryTests/DocumentPersistenceTests.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="169">
+              <caret line="29" column="42" lean-forward="true" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
+              <folding>
+                <marker date="1558317458641" expanded="false" signature="6:236" ph="..." />
+                <marker date="1558317458641" expanded="true" signature="263:2200" ph="{...}" />
+                <marker date="1558317458641" expanded="true" signature="307:2198" ph="{...}" />
+                <marker date="1558317458641" expanded="true" signature="519:1072" ph="{...}" />
+                <marker date="1558317458641" expanded="true" signature="846:971" ph="{...}" />
+                <marker date="1558317458641" expanded="true" signature="1148:1386" ph="{...}" />
+                <marker date="1558317458641" expanded="true" signature="1460:1728" ph="{...}" />
+                <marker date="1558317458641" expanded="true" signature="1780:2192" ph="{...}" />
+                <marker date="1558317458641" expanded="true" signature="1941:2153" ph="{...}" />
+                <marker date="1558317458641" expanded="true" signature="2046:2139" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/SenderControllerTests/SenderControllerTests.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="30" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="30" />
+              <folding>
+                <marker date="1558293998766" expanded="true" signature="6:310" ph="..." />
+                <marker date="1558293998766" expanded="true" signature="337:1832" ph="{...}" />
+                <marker date="1558293998766" expanded="true" signature="378:1830" ph="{...}" />
+                <marker date="1558293998766" expanded="true" signature="782:1281" ph="{...}" />
+                <marker date="1558293998766" expanded="true" signature="1384:1534" ph="{...}" />
+                <marker date="1558293998766" expanded="true" signature="1636:1824" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -331,10 +277,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Recipient/Program.cs" />
-        <option value="$PROJECT_DIR$/src/Recipient/Startup.cs" />
-        <option value="$PROJECT_DIR$/src/Sender/Attributes/ValidateZipAttribute.cs" />
-        <option value="$PROJECT_DIR$/src/Sender/Extensions/ServiceCollectionExtensions.cs" />
         <option value="$PROJECT_DIR$/src/Sender/Models/ErrorViewModel.cs" />
         <option value="$PROJECT_DIR$/src/Sender/Models/UploadViewModel.cs" />
         <option value="$PROJECT_DIR$/src/Sender/Services/Contracts/IFileManagementService.cs" />
@@ -370,7 +312,6 @@
         <option value="$PROJECT_DIR$/src/Recipient/Extensions/ServiceExtensions.cs" />
         <option value="$PROJECT_DIR$/src/Sender/Controllers/SenderController.cs" />
         <option value="$PROJECT_DIR$/test/CyptoTests/CyptoTests.cs" />
-        <option value="$PROJECT_DIR$/test/RepositoryTests/DocumentPersistenceTests.cs" />
         <option value="$PROJECT_DIR$/test/SenderControllerTests/SenderControllerTests.cs" />
         <option value="$PROJECT_DIR$/src/.dockerignore" />
         <option value="$PROJECT_DIR$/src/DockerFile" />
@@ -382,6 +323,11 @@
         <option value="$PROJECT_DIR$/src/Sender/wwwroot/index.html" />
         <option value="$PROJECT_DIR$/src/Sender/Sender.csproj" />
         <option value="$PROJECT_DIR$/src/Sender/Views/Sender/Index.cshtml" />
+        <option value="$PROJECT_DIR$/README" />
+        <option value="$PROJECT_DIR$/test/RepositoryTests/RepositoryTests.csproj" />
+        <option value="$PROJECT_DIR$/test/SenderControllerTests/SenderControllerTests.csproj" />
+        <option value="$PROJECT_DIR$/test/ZipFileManagementTests/ZipFileManagementTests.csproj" />
+        <option value="$PROJECT_DIR$/test/RepositoryTests/DocumentPersistenceTests.cs" />
       </list>
     </option>
   </component>
@@ -392,6 +338,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="-13" />
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="823" />
@@ -409,6 +356,22 @@
             <path>
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
               <item name="ZipFileTransfer" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="ZipFileTransfer" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="src" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="ZipFileTransfer" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="test" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="ZipFileTransfer" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="test" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="RepositoryTests" type="24d0babc:SolutionExplorerModelNode" />
             </path>
           </expand>
           <select />
@@ -437,7 +400,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected=".NET Project.src\Sender">
+  <component name="RunManager" selected=".NET Project.src\Recipient">
     <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -543,7 +506,7 @@
       <workItem from="1558295391074" duration="1539000" />
       <workItem from="1558301233506" duration="5179000" />
       <workItem from="1558309511065" duration="1053000" />
-      <workItem from="1558310573804" duration="1834000" />
+      <workItem from="1558310573804" duration="6397000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1558239898671</created>
@@ -573,11 +536,25 @@
       <option name="project" value="LOCAL" />
       <updated>1558295531259</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="first">
+      <created>1558312638422</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1558312638422</updated>
+    </task>
+    <task id="LOCAL-00006" summary="first">
+      <created>1558312682855</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1558312682855</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39002000" />
+    <option name="totallyTimeSpent" value="43565000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -589,14 +566,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="823" extended-state="6" />
+    <frame x="-13" y="23" width="1440" height="823" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26752505" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27824858" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27824858" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997175" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -608,7 +585,7 @@
       <window_info anchor="bottom" id="Unit Tests" order="11" weight="0.32909605" />
       <window_info anchor="bottom" id="Terminal" order="12" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="14" weight="0.27259886" />
+      <window_info anchor="bottom" id="Build" order="14" visible="true" weight="0.27259886" />
       <window_info anchor="bottom" id="REST Client" order="15" weight="0.32909605" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -815,25 +792,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Security/Cryptor/Encrypter.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Recipient/Controllers/RecipientController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-331">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-          <folding>
-            <marker date="1558293893837" expanded="true" signature="6:252" ph="..." />
-            <marker date="1558293893837" expanded="true" signature="409:1902" ph="{...}" />
-            <marker date="1558293893837" expanded="true" signature="660:796" ph="{...}" />
-            <marker date="1558293893837" expanded="true" signature="947:1896" ph="{...}" />
-            <marker date="1558293893837" expanded="true" signature="1065:1288" ph="{...}" />
-            <marker date="1558293893837" expanded="true" signature="1305:1720" ph="{...}" />
-            <marker date="1558293893837" expanded="true" signature="1753:1859" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Recipient/Extensions/ServiceExtensions.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -841,36 +799,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Recipient/Startup.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Recipient/Program.cs">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/test/CyptoTests/CyptoTests.cs">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/RepositoryTests/DocumentPersistenceTests.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="72" selection-start-line="27" selection-start-column="72" selection-end-line="27" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/RepositoryTests/RepositoryTests.csproj">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/TransferserviceTests/TransferserviceTests.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/ZipFileManagementTests/ZipFileManagementTests.csproj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -1060,12 +998,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/CyptoTests/CyptoTests.csproj">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/TransferserviceTests/TransferserviceTests.csproj">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Sender/obj/Sender.csproj.nuget.g.targets" />
     <entry file="file://$PROJECT_DIR$/src/Sender/uploads/zipFiles/___ZipTransfer20190519235130/___ZipTransfer/src/Core/Common/obj/Debug/netcoreapp2.2/Common.AssemblyInfo.cs">
       <provider selected="true" editor-type-id="text-editor">
@@ -1092,11 +1024,6 @@
         <state relative-caret-position="255">
           <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/SenderControllerTests/SenderControllerTests.csproj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-84" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Sender/DockerFile">
@@ -1126,37 +1053,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/SenderControllerTests/SenderControllerTests.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="59" selection-start-line="18" selection-start-column="59" selection-end-line="18" selection-end-column="59" />
-          <folding>
-            <marker date="1558293998766" expanded="true" signature="6:310" ph="..." />
-            <marker date="1558293998766" expanded="true" signature="337:1832" ph="{...}" />
-            <marker date="1558293998766" expanded="true" signature="378:1830" ph="{...}" />
-            <marker date="1558293998766" expanded="true" signature="782:1281" ph="{...}" />
-            <marker date="1558293998766" expanded="true" signature="1384:1534" ph="{...}" />
-            <marker date="1558293998766" expanded="true" signature="1636:1824" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Sender/obj/project.assets.json">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Recipient/Recipient.csproj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Sender/Sender.csproj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Sender/Views/Sender/Index.cshtml">
       <provider selected="true" editor-type-id="text-editor">
@@ -1186,14 +1084,124 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-5">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sender/Sender.csproj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Recipient/Startup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+          <folding>
+            <marker date="1558211708668" expanded="false" signature="6:294" ph="..." />
+            <marker date="1558211708668" expanded="true" signature="315:1699" ph="{...}" />
+            <marker date="1558211708668" expanded="true" signature="342:1697" ph="{...}" />
+            <marker date="1558211708668" expanded="true" signature="401:464" ph="{...}" />
+            <marker date="1558211708668" expanded="true" signature="687:1046" ph="{...}" />
+            <marker date="1558211708668" expanded="true" signature="1234:1691" ph="{...}" />
+            <marker date="1558211708668" expanded="true" signature="1281:1358" ph="{...}" />
+            <marker date="1558211708668" expanded="true" signature="1375:1578" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="1" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/SenderControllerTests/SenderControllerTests.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="30" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="30" />
+          <folding>
+            <marker date="1558293998766" expanded="true" signature="6:310" ph="..." />
+            <marker date="1558293998766" expanded="true" signature="337:1832" ph="{...}" />
+            <marker date="1558293998766" expanded="true" signature="378:1830" ph="{...}" />
+            <marker date="1558293998766" expanded="true" signature="782:1281" ph="{...}" />
+            <marker date="1558293998766" expanded="true" signature="1384:1534" ph="{...}" />
+            <marker date="1558293998766" expanded="true" signature="1636:1824" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/SenderControllerTests/SenderControllerTests.csproj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/TransferserviceTests/TransferserviceTests.csproj">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/ZipFileManagementTests/ZipFileManagementTests.csproj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/CyptoTests/CyptoTests.csproj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/RepositoryTests/RepositoryTests.csproj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Recipient/appsettings.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="91" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Recipient/Recipient.csproj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/RepositoryTests/DocumentPersistenceTests.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="29" column="42" lean-forward="true" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
+          <folding>
+            <marker date="1558317458641" expanded="false" signature="6:236" ph="..." />
+            <marker date="1558317458641" expanded="true" signature="263:2200" ph="{...}" />
+            <marker date="1558317458641" expanded="true" signature="307:2198" ph="{...}" />
+            <marker date="1558317458641" expanded="true" signature="519:1072" ph="{...}" />
+            <marker date="1558317458641" expanded="true" signature="846:971" ph="{...}" />
+            <marker date="1558317458641" expanded="true" signature="1148:1386" ph="{...}" />
+            <marker date="1558317458641" expanded="true" signature="1460:1728" ph="{...}" />
+            <marker date="1558317458641" expanded="true" signature="1780:2192" ph="{...}" />
+            <marker date="1558317458641" expanded="true" signature="1941:2153" ph="{...}" />
+            <marker date="1558317458641" expanded="true" signature="2046:2139" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ZipFileTransfer.sln">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="26" column="26" lean-forward="true" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+        <state relative-caret-position="325">
+          <caret line="25" column="47" lean-forward="true" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
         </state>
       </provider>
     </entry>

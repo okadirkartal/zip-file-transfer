@@ -298,6 +298,9 @@
         </e>
         <e p="RepositoryTests" t="IncludeRecursive">
           <e p="bin" t="ExcludeRecursive" />
+          <e p="Data" t="Include">
+            <e p="Documents.db" t="Include" />
+          </e>
           <e p="DocumentPersistenceTests.cs" t="Include" />
           <e p="obj" t="ExcludeRecursive">
             <e p="Debug" t="Include">

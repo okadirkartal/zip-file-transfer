@@ -1,0 +1,11 @@
+ZIP FILE TRANSFER
+
+Technology Stack : ASP.NET Core MVC,ASP.NET Core Web API,.NET Core(2.2),LiteDB,Docker
+
+-Project has 2 main point Sender(ASP.NET Core MVC) and Recipient(ASP.NET Core Web API)
+
+-Sender project is connecting to the recipient project via Transfer Service
+
+-The sender project receiver project uses its own application setting files as well as the shared setting file (SharedSettings.json)
+
+

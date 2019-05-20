@@ -25,7 +25,7 @@ namespace RepositoryTests
 
             string dbPath = "../../../Data/Documents.db";
 
-            _configuration[Core.Common.Constants.StorageConnectionString].Returns(dbPath);
+            _configuration[Core.Common.Constants.StorageConnectionString].Returns("FileName=../../../Data/Documents.db;Timeout=10; Journal=false;Mode=Exclusive");
 
 
             if (!File.Exists(dbPath))
