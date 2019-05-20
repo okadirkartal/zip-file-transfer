@@ -1,0 +1,19 @@
+FROM microsoft/dotnet:2.2 as base
+WORKDIR /app
+EXPOSE 5006
+
+FROM microsoft/dotnet:2.2 AS build
+WORKDIR /src
+COPY Recipient/Recipient.csproj Recipient/
+RUN dotnet restore Recipient/Recipient.csproj
+COPY . .
+WORKDIR /src/Recipient
+RUN dotnet build Recipient.csproj -c Release -o /app
+
+FROM build AS publish
+RUN dotnet publish Recipient.csproj -c Release -o /app
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app .
+ENTRYPOINT ["dotnet", "Recipient.dll"]
