@@ -6,14 +6,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df22de9c-84c7-44fd-89a4-6705dec6c7ee" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ZipFileTransfer/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ZipFileTransfer/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ZipFileTransfer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ZipFileTransfer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/README" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/DocumentPersistenceTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/test/RepositoryTests/DocumentPersistenceTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RepositoryTests/RepositoryTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/test/RepositoryTests/RepositoryTests.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/SenderControllerTests/SenderControllerTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/test/SenderControllerTests/SenderControllerTests.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/ZipFileManagementTests/ZipFileManagementTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/test/ZipFileManagementTests/ZipFileManagementTests.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/ZipFileManagementTests/zipFilestest.zip" beforeDir="false" afterPath="$PROJECT_DIR$/test/ZipFileManagementTests/zipFilestest.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ConsoleApp1/ConsoleApp1.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ConsoleApp1/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Core/DataAccess/DataAccess.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/DataAccess/DataAccess.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Recipient/Data/Documents.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recipient/Data/Documents.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sender/Sender.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sender/Sender.csproj" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,9 +35,9 @@
         <counts>
           <entry key="DockerFile" value="6" />
           <entry key="README" value="1" />
-          <entry key="cs" value="167" />
+          <entry key="cs" value="168" />
           <entry key="cshtml" value="18" />
-          <entry key="csproj" value="71" />
+          <entry key="csproj" value="85" />
           <entry key="css" value="2" />
           <entry key="db" value="2" />
           <entry key="dockerignore" value="1" />
@@ -49,16 +47,16 @@
           <entry key="ico" value="2" />
           <entry key="js" value="2" />
           <entry key="json" value="27" />
-          <entry key="sln" value="11" />
+          <entry key="sln" value="12" />
           <entry key="targets" value="1" />
           <entry key="yml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="C#" value="167" />
+          <entry key="C#" value="168" />
           <entry key="CSS" value="2" />
-          <entry key="Csproj" value="71" />
+          <entry key="Csproj" value="85" />
           <entry key="HTML" value="3" />
           <entry key="Image" value="3" />
           <entry key="JSON" value="27" />
@@ -66,7 +64,7 @@
           <entry key="MsBuild targets file" value="1" />
           <entry key="PLAIN_TEXT" value="12" />
           <entry key="Razor" value="18" />
-          <entry key="Solution File" value="11" />
+          <entry key="Solution File" value="12" />
           <entry key="YAML" value="2" />
         </counts>
       </usages-collector>
@@ -74,9 +72,9 @@
         <counts>
           <entry key="DockerFile" value="268" />
           <entry key="README" value="382" />
-          <entry key="cs" value="4264" />
+          <entry key="cs" value="4273" />
           <entry key="cshtml" value="387" />
-          <entry key="csproj" value="11" />
+          <entry key="csproj" value="13" />
           <entry key="css" value="3" />
           <entry key="dockerignore" value="1" />
           <entry key="html" value="278" />
@@ -87,9 +85,9 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="4264" />
+          <entry key="C#" value="4273" />
           <entry key="CSS" value="3" />
-          <entry key="Csproj" value="11" />
+          <entry key="Csproj" value="13" />
           <entry key="HTML" value="278" />
           <entry key="JSON" value="36" />
           <entry key="PLAIN_TEXT" value="681" />
@@ -102,10 +100,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README">
+        <entry file="file://$PROJECT_DIR$/src/Sender/Sender.csproj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="1" selection-end-line="11" />
+            <state relative-caret-position="345">
+              <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -143,6 +141,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/ZipFileManagementTests/ZipFileManagementTests.csproj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Recipient/Recipient.csproj">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
@@ -152,57 +159,20 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/ZipFileManagementTests/ZipFileManagementTests.csproj">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/src/Security/Authenticator/Authenticator.csproj">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Security/Cryptor/Cryptor.csproj">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ZipFileTransfer.sln">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="325">
-              <caret line="25" column="47" lean-forward="true" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/RepositoryTests/DocumentPersistenceTests.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="29" column="42" lean-forward="true" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
-              <folding>
-                <marker date="1558317458641" expanded="false" signature="6:236" ph="..." />
-                <marker date="1558317458641" expanded="true" signature="263:2200" ph="{...}" />
-                <marker date="1558317458641" expanded="true" signature="307:2198" ph="{...}" />
-                <marker date="1558317458641" expanded="true" signature="519:1072" ph="{...}" />
-                <marker date="1558317458641" expanded="true" signature="846:971" ph="{...}" />
-                <marker date="1558317458641" expanded="true" signature="1148:1386" ph="{...}" />
-                <marker date="1558317458641" expanded="true" signature="1460:1728" ph="{...}" />
-                <marker date="1558317458641" expanded="true" signature="1780:2192" ph="{...}" />
-                <marker date="1558317458641" expanded="true" signature="1941:2153" ph="{...}" />
-                <marker date="1558317458641" expanded="true" signature="2046:2139" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/SenderControllerTests/SenderControllerTests.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="30" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="30" />
-              <folding>
-                <marker date="1558293998766" expanded="true" signature="6:310" ph="..." />
-                <marker date="1558293998766" expanded="true" signature="337:1832" ph="{...}" />
-                <marker date="1558293998766" expanded="true" signature="378:1830" ph="{...}" />
-                <marker date="1558293998766" expanded="true" signature="782:1281" ph="{...}" />
-                <marker date="1558293998766" expanded="true" signature="1384:1534" ph="{...}" />
-                <marker date="1558293998766" expanded="true" signature="1636:1824" ph="{...}" />
-              </folding>
+              <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -255,7 +225,6 @@
     <setting file="file://$PROJECT_DIR$/src/Sender/Views/Sender/Index.cshtml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Recipient/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Core/ZipManagementService/ZipManagementService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/ConsoleApp1/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Sender/Startup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Sender/Services/TransferService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Core/ZipManagementService/DirectoryModel.cs" root0="FORCE_HIGHLIGHTING" />
@@ -277,7 +246,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Sender/Models/ErrorViewModel.cs" />
         <option value="$PROJECT_DIR$/src/Sender/Models/UploadViewModel.cs" />
         <option value="$PROJECT_DIR$/src/Sender/Services/Contracts/IFileManagementService.cs" />
         <option value="$PROJECT_DIR$/src/Sender/Services/Contracts/ITransferService.cs" />
@@ -321,13 +289,14 @@
         <option value="$PROJECT_DIR$/src/docker-compose.yml" />
         <option value="$PROJECT_DIR$/src/Core/ZipManagementService/DirectoryModel.cs" />
         <option value="$PROJECT_DIR$/src/Sender/wwwroot/index.html" />
-        <option value="$PROJECT_DIR$/src/Sender/Sender.csproj" />
         <option value="$PROJECT_DIR$/src/Sender/Views/Sender/Index.cshtml" />
         <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/test/RepositoryTests/RepositoryTests.csproj" />
         <option value="$PROJECT_DIR$/test/SenderControllerTests/SenderControllerTests.csproj" />
         <option value="$PROJECT_DIR$/test/ZipFileManagementTests/ZipFileManagementTests.csproj" />
         <option value="$PROJECT_DIR$/test/RepositoryTests/DocumentPersistenceTests.cs" />
+        <option value="$PROJECT_DIR$/src/Core/DataAccess/DataAccess.csproj" />
+        <option value="$PROJECT_DIR$/src/Sender/Sender.csproj" />
       </list>
     </option>
   </component>
@@ -367,12 +336,6 @@
               <item name="ZipFileTransfer" type="24d0babc:SolutionExplorerModelNode" />
               <item name="test" type="24d0babc:SolutionExplorerModelNode" />
             </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="ZipFileTransfer" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="test" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="RepositoryTests" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -400,7 +363,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected=".NET Project.src\Recipient">
+  <component name="RunManager" selected=".NET Project.src\Sender">
     <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -506,7 +469,7 @@
       <workItem from="1558295391074" duration="1539000" />
       <workItem from="1558301233506" duration="5179000" />
       <workItem from="1558309511065" duration="1053000" />
-      <workItem from="1558310573804" duration="6397000" />
+      <workItem from="1558310573804" duration="6994000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1558239898671</created>
@@ -550,11 +513,18 @@
       <option name="project" value="LOCAL" />
       <updated>1558312682855</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="first">
+      <created>1558319041220</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1558319041220</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43565000" />
+    <option name="totallyTimeSpent" value="44162000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -573,7 +543,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.27824858" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27824858" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997175" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -585,7 +555,7 @@
       <window_info anchor="bottom" id="Unit Tests" order="11" weight="0.32909605" />
       <window_info anchor="bottom" id="Terminal" order="12" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="14" visible="true" weight="0.27259886" />
+      <window_info anchor="bottom" id="Build" order="14" weight="0.27259886" />
       <window_info anchor="bottom" id="REST Client" order="15" weight="0.32909605" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -792,50 +762,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Recipient/Extensions/ServiceExtensions.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Recipient/Program.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/CyptoTests/CyptoTests.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/TransferserviceTests/TransferserviceTests.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/ZipFileManagementTests/ZipFileManagementTests.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <folding>
-            <marker date="1558290145043" expanded="true" signature="6:273" ph="..." />
-            <marker date="1558290145043" expanded="true" signature="338:2671" ph="{...}" />
-            <marker date="1558290145043" expanded="true" signature="646:1210" ph="{...}" />
-            <marker date="1558290145043" expanded="true" signature="1316:2545" ph="{...}" />
-            <marker date="1558290145043" expanded="true" signature="1510:2211" ph="{...}" />
-            <marker date="1558290145043" expanded="true" signature="1620:1965" ph="{...}" />
-            <marker date="1558290145043" expanded="true" signature="1848:1947" ph="{...}" />
-            <marker date="1558290145043" expanded="true" signature="2048:2197" ph="{...}" />
-            <marker date="1558290145043" expanded="true" signature="2596:2665" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Core/Common/Common.csproj">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ConsoleApp1/ConsoleApp1.csproj">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DockerFile" />
     <entry file="file://$PROJECT_DIR$/src/.dockerignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1088,13 +1014,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Sender/Sender.csproj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Recipient/Startup.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
@@ -1134,6 +1053,89 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Recipient/appsettings.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="91" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/RepositoryTests/DocumentPersistenceTests.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="27" column="101" selection-start-line="27" selection-start-column="101" selection-end-line="27" selection-end-column="101" />
+          <folding>
+            <marker date="1558318989577" expanded="false" signature="6:236" ph="..." />
+            <marker date="1558318989577" expanded="true" signature="263:2209" ph="{...}" />
+            <marker date="1558318989577" expanded="true" signature="307:2207" ph="{...}" />
+            <marker date="1558318989577" expanded="true" signature="519:1081" ph="{...}" />
+            <marker date="1558318989577" expanded="true" signature="855:980" ph="{...}" />
+            <marker date="1558318989577" expanded="true" signature="1157:1395" ph="{...}" />
+            <marker date="1558318989577" expanded="true" signature="1469:1737" ph="{...}" />
+            <marker date="1558318989577" expanded="true" signature="1789:2201" ph="{...}" />
+            <marker date="1558318989577" expanded="true" signature="1950:2162" ph="{...}" />
+            <marker date="1558318989577" expanded="true" signature="2055:2148" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Core/DataAccess/DocumentPersistenceService.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="40" />
+          <folding>
+            <marker date="1558293751424" expanded="true" signature="6:118" ph="..." />
+            <marker date="1558293751424" expanded="true" signature="140:1583" ph="{...}" />
+            <marker date="1558293751424" expanded="true" signature="216:1581" ph="{...}" />
+            <marker date="1558293751424" expanded="true" signature="435:605" ph="{...}" />
+            <marker date="1558293751424" expanded="true" signature="657:1326" ph="{...}" />
+            <marker date="1558293751424" expanded="true" signature="738:1316" ph="{...}" />
+            <marker date="1558293751424" expanded="true" signature="951:1075" ph="{...}" />
+            <marker date="1558293751424" expanded="true" signature="1382:1575" ph="{...}" />
+            <marker date="1558293751424" expanded="true" signature="1463:1565" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Core/Common/Common.csproj">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Core/DataAccess/DataAccess.csproj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Core/Entities/Entities.csproj">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Core/Network/Network.csproj">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Core/ZipManagementService/ZipManagementService.csproj">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Security/Authenticator/Authenticator.csproj">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Security/Cryptor/Cryptor.csproj">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/CyptoTests/CyptoTests.csproj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/RepositoryTests/RepositoryTests.csproj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/SenderControllerTests/SenderControllerTests.csproj">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1151,27 +1153,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/CyptoTests/CyptoTests.csproj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/RepositoryTests/RepositoryTests.csproj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Recipient/appsettings.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="91" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Recipient/Recipient.csproj">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1179,29 +1160,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/RepositoryTests/DocumentPersistenceTests.cs">
+    <entry file="file://$PROJECT_DIR$/src/Sender/Sender.csproj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="29" column="42" lean-forward="true" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
-          <folding>
-            <marker date="1558317458641" expanded="false" signature="6:236" ph="..." />
-            <marker date="1558317458641" expanded="true" signature="263:2200" ph="{...}" />
-            <marker date="1558317458641" expanded="true" signature="307:2198" ph="{...}" />
-            <marker date="1558317458641" expanded="true" signature="519:1072" ph="{...}" />
-            <marker date="1558317458641" expanded="true" signature="846:971" ph="{...}" />
-            <marker date="1558317458641" expanded="true" signature="1148:1386" ph="{...}" />
-            <marker date="1558317458641" expanded="true" signature="1460:1728" ph="{...}" />
-            <marker date="1558317458641" expanded="true" signature="1780:2192" ph="{...}" />
-            <marker date="1558317458641" expanded="true" signature="1941:2153" ph="{...}" />
-            <marker date="1558317458641" expanded="true" signature="2046:2139" ph="{...}" />
-          </folding>
+        <state relative-caret-position="345">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ZipFileTransfer.sln">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
-          <caret line="25" column="47" lean-forward="true" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
         </state>
       </provider>
     </entry>
