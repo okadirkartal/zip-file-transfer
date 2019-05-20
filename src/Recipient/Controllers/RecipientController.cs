@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc; 
 using Security.Cryptor.Contracts;
 
-namespace Receipent.Controllers
+namespace Recipient.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

@@ -54,7 +54,7 @@ namespace Sender.Controllers
 
                     // var encryptedData = await _encrypter.EncryptAsync(result);
 
-                    var response = await _transferService.PostToReceiverAsync("Post",
+                    var response = await _transferService.PostToRecipientAsync("Post",
                         new TransferModel()
                         {
                             UserName = await _encrypter.EncryptAsync(model.UserName),

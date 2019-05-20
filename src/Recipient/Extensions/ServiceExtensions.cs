@@ -6,7 +6,7 @@ using Security.Authenticator.Services.Contracts;
 using Security.Cryptor;
 using Security.Cryptor.Contracts;
 
-namespace Receipent.Extensions
+namespace Recipient.Extensions
 {
     public static class ServiceExtensions
     {

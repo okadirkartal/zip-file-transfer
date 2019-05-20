@@ -51,7 +51,7 @@ namespace RepositoryTests
 
 
         [Test]
-        public async Task PostToReceiverAsync_WhenArgumentIsNull_ReturnsBadRequest()
+        public async Task PostToRecipientAsync_WhenArgumentIsNull_ReturnsBadRequest()
         {
             // act
             var result = await _senderController.Index(null);

@@ -20,9 +20,9 @@ namespace Sender.Services
             this._configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
         }
 
-        public async Task<ResultViewModel> PostToReceiverAsync(string endPoint, TransferModel model)
+        public async Task<ResultViewModel> PostToRecipientAsync(string endPoint, TransferModel model)
         {
-            this._httpClient.BaseUrl = this._configuration[Core.Common.Constants.ReceiverApiBaseUrl];
+            this._httpClient.BaseUrl = this._configuration[Core.Common.Constants.RecipientApiBaseUrl];
             this._httpClient.AuthorizationHeader = this._configuration[Core.Common.Constants.SecurityHeader];
             this._httpClient.AuthorizationValue = $"{model.UserName}:{model.Password}";
 

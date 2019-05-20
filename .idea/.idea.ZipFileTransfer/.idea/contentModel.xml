@@ -189,27 +189,7 @@
           </e>
           <e p="Startup.cs" t="Include" />
           <e p="uploads" t="Include">
-            <e p="zipFiles" t="Include">
-              <e p="___ZipTransfer20190519235130.zip" t="Include" />
-              <e p="test2019052022930" t="Include">
-                <e p="subfolder" t="Include">
-                  <e p="test4.txt" t="Include" />
-                </e>
-                <e p="test1.txt" t="Include" />
-                <e p="test2.txt" t="Include" />
-                <e p="test3.txt" t="Include" />
-              </e>
-              <e p="test2019052022930.zip" t="Include" />
-              <e p="test2019052022939" t="Include">
-                <e p="subfolder" t="Include">
-                  <e p="test4.txt" t="Include" />
-                </e>
-                <e p="test1.txt" t="Include" />
-                <e p="test2.txt" t="Include" />
-                <e p="test3.txt" t="Include" />
-              </e>
-              <e p="test2019052022939.zip" t="Include" />
-            </e>
+            <e p="zipFiles" t="Include" />
           </e>
           <e p="Views" t="Include">
             <e p="_ViewImports.cshtml" t="Include" />

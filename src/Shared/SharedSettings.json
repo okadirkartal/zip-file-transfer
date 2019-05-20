@@ -3,7 +3,7 @@
     "Header":"Authorization",
     "CryptoKey":"8137081371813720"
   },
-  "ReceiverApi": {
+  "RecipientApi": {
     "BaseUrl": "http://localhost:5006/api/Recipient/"
   }
 }

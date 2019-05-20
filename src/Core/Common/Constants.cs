@@ -2,7 +2,7 @@
 {
     public class Constants
     {
-        public const string ReceiverApiBaseUrl = "ReceiverApi:BaseUrl";
+        public const string RecipientApiBaseUrl = "RecipientApi:BaseUrl";
 
         public const string SecurityHeader = "Security:Header";
 

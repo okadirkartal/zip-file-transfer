@@ -39,7 +39,7 @@ namespace CyptoTests
         }
 
         [Test]
-        public async Task PostToReceiver_WhenIsValid_ReturnsTrue()
+        public async Task PostToRecipient_WhenIsValid_ReturnsTrue()
         {
             string endpoint = "Post";
 
@@ -51,22 +51,22 @@ namespace CyptoTests
                 Password = "test"
             };
 
-            _configuration[Core.Common.Constants.ReceiverApiBaseUrl].Returns("http://localhost:5006/api/Recipient/");
+            _configuration[Core.Common.Constants.RecipientApiBaseUrl].Returns("http://localhost:5006/api/Recipient/");
             _configuration[Core.Common.Constants.SecurityHeader].Returns("Authorization");
             _httpClient.PostAsync<ResultViewModel>(endpoint, transferModel.JsonData).Returns(new ResultViewModel());
 
 
-            var result = await _transferService.PostToReceiverAsync(endpoint, transferModel);
+            var result = await _transferService.PostToRecipientAsync(endpoint, transferModel);
 
             Assert.LessOrEqual(0, result.Errors.Count());
         }
 
 
         [Test]
-        public void PostToReceiverAsync_WhenArgumentIsNull_ThrowsNullReferenceException()
+        public void PostToRecipientAsync_WhenArgumentIsNull_ThrowsNullReferenceException()
         {
             // act & assert
-            Assert.ThrowsAsync<NullReferenceException>(() => _transferService.PostToReceiverAsync(null, null));
+            Assert.ThrowsAsync<NullReferenceException>(() => _transferService.PostToRecipientAsync(null, null));
         }
     }
 }

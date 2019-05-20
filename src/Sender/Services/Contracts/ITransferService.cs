@@ -5,6 +5,6 @@ namespace Sender.Services.Contracts
 {
     public interface ITransferService
     {
-        Task<ResultViewModel> PostToReceiverAsync(string endPoint, TransferModel model);
+        Task<ResultViewModel> PostToRecipientAsync(string endPoint, TransferModel model);
     }
 }

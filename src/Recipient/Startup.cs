@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Receipent.Extensions;
+using Recipient.Extensions;
 using Security.Authenticator;
 
 namespace Recipient
