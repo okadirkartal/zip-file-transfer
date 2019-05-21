@@ -6,7 +6,7 @@ IDE,macOS Mojave
 -The Sender project Recipient project uses its own application setting files as well as the shared
 setting file (SharedSettings.json)
 
-<img src="images/ZipFileTransger-Schema.png" />
+ 
 Build and Run
 Recipient and Sender applications must be run together
 -Run over Visual Studio on Windows as Multiple Application Startup by introducing these two projects
