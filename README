@@ -1,7 +1,6 @@
 ZIP FILE TRANSFER
 
-Technology Stack : ASP.NET Core MVC,ASP.NET Core Web API,.NET Core(2.2),LiteDB,Rider
-IDE,macOS Mojave
+Technology Stack : ASP.NET Core MVC,ASP.NET Core Web API,.NET Core(2.2),LiteDB-NoSQL,Rider IDE,macOS Mojave
 
 -Project has 2 main point Sender(ASP.NET Core MVC) and Recipient(ASP.NET Core Web API)
 
