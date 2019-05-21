@@ -1,11 +1,15 @@
 ZIP FILE TRANSFER
-
-Technology Stack : ASP.NET Core MVC,ASP.NET Core Web API,.NET Core(2.2),LiteDB 
-
+Technology Stack : ASP.NET Core MVC,ASP.NET Core Web API,.NET Core(2.2),LiteDB,Rider
+IDE,macOS Mojave
 -Project has 2 main point Sender(ASP.NET Core MVC) and Recipient(ASP.NET Core Web API)
-
 -Sender project is connecting to the recipient project via Transfer Service
+-The Sender project Recipient project uses its own application setting files as well as the shared
+setting file (SharedSettings.json)
 
--The Sender project Recipient project uses its own application setting files as well as the shared setting file (SharedSettings.json)
+![ZipFileTransger-Schema](https://github.com/okadirkartal/ZipFileTransfer/blob/master/images/ZipFileTransger-Schema.png)
+Build and Run
+Recipient and Sender applications must be run together
+-Run over Visual Studio on Windows as Multiple Application Startup by introducing these two projects
+-Run simultaneous operation these two projects via Rider on macOS
 
 
