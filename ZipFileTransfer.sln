@@ -45,6 +45,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransferserviceTests", "tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SenderControllerTests", "test\SenderControllerTests\SenderControllerTests.csproj", "{49938110-91C6-4143-8C70-ED364675FA6A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{081ED262-B966-4F01-8381-ADA69168FFB7}"
+ProjectSection(SolutionItems) = preProject
+	..\..\..\Downloads\ZipFileTransger-Schema.png = ..\..\..\Downloads\ZipFileTransger-Schema.png
+EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
