@@ -16,9 +16,6 @@ namespace Core.ZipManagementService
 
         public List<DirectoryModel> subItems { get; set; }
 
-
-       
-                  
         public DirectoryModel(string itemNameFlat, string item)
         {
             this._itemNameFlat = itemNameFlat;
