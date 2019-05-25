@@ -27,17 +27,13 @@ namespace DataAccess
             {
                 var col = db.GetCollection<TransferModel>(nameof(TransferModel));
 
-                // Create your new customer instance
                 var model = new TransferModel
                 {
                     Id = Guid.NewGuid().ToString().Replace("-", ""),
                     JsonData = data
                 };
 
-                // Create unique index in Name field
                 col.EnsureIndex(x => x.Id, true);
-
-                // Insert new customer document (Id will be auto-incremented)
 
                 return col.Insert(model);
             }
