@@ -1,10 +1,8 @@
 using System.Threading.Tasks;
-using Core.Entities;
+using Domain.Entities;
 
-namespace Sender.Services.Contracts
+namespace Sender.Services.Contracts;
+public interface ITransferService
 {
-    public interface ITransferService
-    {
-        Task<ResultViewModel> PostToRecipientAsync(string endPoint, TransferModel model);
-    }
+    Task<ResultViewModel> PostToRecipientAsync(string endPoint, TransferModel model);
 }

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Net;
 using System.Threading.Tasks;
-using Core.Entities;
-using Core.ZipManagementService;
-using DataAccess.Contracts;
+using Domain.Entities;
+using Infrastructure.Services;
+using Infrastructure.Persistence;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc; 
-using Security.Cryptor.Contracts;
+using Microsoft.AspNetCore.Mvc;
+using Infrastructure.Security.Contracts;
 
 namespace Recipient.Controllers
 {
@@ -34,7 +34,7 @@ namespace Recipient.Controllers
             if (string.IsNullOrEmpty(jsonData))
             {
                 model.Errors.Add(new ErrorModel
-                    {StatusCode = (int) HttpStatusCode.NoContent, ErrorMessage = nameof(HttpStatusCode.NoContent)});
+                { StatusCode = (int)HttpStatusCode.NoContent, ErrorMessage = nameof(HttpStatusCode.NoContent) });
                 return model;
             }
 
@@ -50,7 +50,7 @@ namespace Recipient.Controllers
             }
             catch (Exception ex)
             {
-                model.Errors.Add(new ErrorModel {ErrorMessage = ex.Message});
+                model.Errors.Add(new ErrorModel { ErrorMessage = ex.Message });
             }
 
             return model;
