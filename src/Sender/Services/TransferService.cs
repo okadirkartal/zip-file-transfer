@@ -1,8 +1,9 @@
 using System;
 using System.Threading.Tasks;
-using Core.Entities;
-using Core.Network.Contracts;
-using Microsoft.Extensions.Configuration;
+using Domain.Entities;
+using Domain.Shared;
+using Infrastructure.Network.Contracts;
+using Microsoft.Extensions.Options;
 using Sender.Services.Contracts;
 
 namespace Sender.Services
@@ -11,19 +12,19 @@ namespace Sender.Services
     {
         private readonly IHttpClientWrapper _httpClient;
 
-        private readonly IConfiguration _configuration;
+        private readonly  SharedSettings _settings;
 
-        public TransferService(IHttpClientWrapper httpClient, IConfiguration configuration)
+        public TransferService(IHttpClientWrapper httpClient, IOptions<SharedSettings> settings)
         {
             this._httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
 
-            this._configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
+            this._settings = settings?.Value ?? throw new ArgumentNullException(nameof(settings));
         }
 
         public async Task<ResultViewModel> PostToRecipientAsync(string endPoint, TransferModel model)
         {
-            this._httpClient.BaseUrl = this._configuration[Core.Common.Constants.RecipientApiBaseUrl];
-            this._httpClient.AuthorizationHeader = this._configuration[Core.Common.Constants.SecurityHeader];
+            this._httpClient.BaseUrl = _settings.RecipientApi.BaseUrl;
+            this._httpClient.AuthorizationHeader = _settings.Security.Header;
             this._httpClient.AuthorizationValue = $"{model.UserName}:{model.Password}";
 
             var response = await _httpClient.PostAsync<ResultViewModel>(endPoint, model.JsonData);

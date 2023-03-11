@@ -1,10 +1,9 @@
-using DataAccess;
-using DataAccess.Contracts;
-using Microsoft.Extensions.DependencyInjection;
-using Security.Authenticator.Services;
-using Security.Authenticator.Services.Contracts;
-using Security.Cryptor;
-using Security.Cryptor.Contracts;
+using Infrastructure.Persistence;
+using Infrastructure.Security;
+using Infrastructure.Security.Contracts;
+using Infrastructure.Services;
+using Infrastructure.Services.Contracts;
+using Microsoft.Extensions.DependencyInjection; 
 
 namespace Recipient.Extensions
 {
@@ -15,7 +14,7 @@ namespace Recipient.Extensions
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",
-                    builder => builder.AllowAnyOrigin());
+                    builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowCredentials());
             });
         }
 

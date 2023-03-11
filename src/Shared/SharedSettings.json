@@ -1,9 +1,11 @@
 {
-  "Security": {
-    "Header":"Authorization",
-    "CryptoKey":"8137081371813720"
-  },
-  "RecipientApi": {
-    "BaseUrl": "http://localhost:5006/api/Recipient/"
+  "SharedSettings":{
+    "Security": {
+      "Header":"Authorization",
+      "CryptoKey":"8137081371813720"
+    },
+    "RecipientApi": {
+      "BaseUrl": "http://localhost:5077/api/Recipient/"
+    }
   }
 }
