@@ -3,6 +3,7 @@ using System.IO.Compression;
 using Infrastructure.Security.Contracts;
 using Infrastructure.Services.Contracts;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using Microsoft.Extensions.Configuration;
 
 namespace Infrastructure.Services
@@ -35,10 +36,10 @@ namespace Infrastructure.Services
         public async Task<string> GetSerializedDirectoryStructure(string savedZipFilePath)
         {
             var result =
-                await DirectoryModel.CreateStructureFromDirectoryNode(UnzipFileToGivenPath(savedZipFilePath),
+                await DirectoryService.CreateStructureFromDirectoryNode(UnzipFileToGivenPath(savedZipFilePath),
                     _encrypter);
 
-            return JsonSerializer.Serialize(result);
+            return JsonSerializer.Serialize(result,new JsonSerializerOptions() { DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull} );
         }
     }
 }

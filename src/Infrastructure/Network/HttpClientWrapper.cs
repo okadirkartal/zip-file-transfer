@@ -14,25 +14,20 @@ namespace Infrastructure.Network.Contracts
 
         public string AuthorizationValue { get; set; }
 
-        public HttpClientWrapper()
-        {
-        }
-
-
+        public HttpClientWrapper() {}
+        
         public async Task<TResponseDto> PostAsync<TResponseDto>(string endpoint, string dto)
         {
             if (string.IsNullOrEmpty(endpoint)) throw new ArgumentNullException(nameof(endpoint));
 
             if (dto == null) throw new ArgumentNullException(nameof(dto));
-
-
+            
             string content = JsonSerializer.Serialize(dto);
 
             HttpContent httpContent = new StringContent(content, Encoding.UTF8, "application/json");
 
             _client = GetHttpClient();
-
-
+            
             HttpResponseMessage responseMessage = await _client.PostAsync(endpoint, httpContent);
 
             _client.Dispose();
@@ -53,8 +48,7 @@ namespace Infrastructure.Network.Contracts
             this._client.DefaultRequestHeaders.Add(authorizationType,
                 "Basic " + $"{userName}:{password}");
         }
-
-
+        
         private HttpClient GetHttpClient()
         {
             _client = new HttpClient();

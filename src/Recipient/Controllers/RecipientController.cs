@@ -7,6 +7,7 @@ using Infrastructure.Persistence;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Infrastructure.Security.Contracts;
+using LiteDB;
 
 namespace Recipient.Controllers
 {
@@ -40,13 +41,13 @@ namespace Recipient.Controllers
 
             try
             {
-                var decryptedData = await DirectoryModel.GetDecryptedDirectoryNode(jsonData, _decrypter);
+                var decryptedData = await DirectoryService.GetDecryptedDirectoryNode(jsonData, _decrypter);
 
                 var bsonDocument = _documentPersistenceService.SaveDocument(decryptedData);
 
                 var savedData = _documentPersistenceService.GetDocument(bsonDocument);
 
-                model.Data = savedData.AsDocument.ToString().Replace(@"\n", "").Replace(@"\", "");
+                model.Data = System.Text.Json.JsonSerializer.Serialize(savedData);
             }
             catch (Exception ex)
             {
