@@ -1,61 +1,59 @@
 ﻿using System;
 using System.Net;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Domain.Entities;
 using Infrastructure.Persistence.Contracts;
-using Infrastructure.Services; 
-using Microsoft.AspNetCore.Mvc;
 using Infrastructure.Security.Contracts;
+using Infrastructure.Services;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Recipient.Controllers
+namespace Recipient.Controllers;
+
+[Route("api/[controller]")]
+[Authorize]
+[ApiController]
+public class RecipientController : ControllerBase
 {
-    [Route("api/[controller]")]
-    [Authorize]
-    [ApiController]
-    public class RecipientController : ControllerBase
+    private readonly IDecrypter _decrypter;
+    private readonly IDocumentPersistenceService _documentPersistenceService;
+
+    public RecipientController(IDocumentPersistenceService documentPersistenceService, IDecrypter decrypter)
     {
-        private readonly IDocumentPersistenceService _documentPersistenceService;
+        _documentPersistenceService = documentPersistenceService;
+        _decrypter = decrypter;
+    }
 
-        private readonly IDecrypter _decrypter;
+    // GET api/values
+    [HttpPost]
+    public async Task<IActionResult> Post([FromBody] DirectoryModel jsonData)
+    {
+        var model = new ResultViewModel();
 
-        public RecipientController(IDocumentPersistenceService documentPersistenceService, IDecrypter decrypter)
+        if (jsonData == null)
         {
-            this._documentPersistenceService = documentPersistenceService;
-            this._decrypter = decrypter;
+            model.Errors.Add(new ErrorModel
+                { StatusCode = (int)HttpStatusCode.NoContent, ErrorMessage = nameof(HttpStatusCode.NoContent) });
+            return NoContent();
         }
 
-        // GET api/values
-        [HttpPost]
-        public async Task<IActionResult> Post([FromBody] DirectoryModel jsonData)
+        try
         {
-            ResultViewModel model = new ResultViewModel();
+            await DirectoryService.GetDecryptedDirectoryNode(jsonData, _decrypter);
 
-            if (jsonData == null)
-            {
-                model.Errors.Add(new ErrorModel
-                { StatusCode = (int)HttpStatusCode.NoContent, ErrorMessage = nameof(HttpStatusCode.NoContent) });
-                return NoContent();
-            }
+            var bsonDocument = _documentPersistenceService.SaveDocument(jsonData);
 
-            try
-            {
-                await DirectoryService.GetDecryptedDirectoryNode(jsonData, _decrypter);
+            var savedData = _documentPersistenceService.GetDocument(bsonDocument);
 
-                var bsonDocument = _documentPersistenceService.SaveDocument(jsonData);
+            model.Data = JsonSerializer.Serialize(savedData);
 
-                var savedData = _documentPersistenceService.GetDocument(bsonDocument);
-
-                model.Data = System.Text.Json.JsonSerializer.Serialize(savedData);
-                
-                return Ok(model);
-            }
-            catch (Exception ex)
-            {
-                model.Errors.Add(new ErrorModel { ErrorMessage = ex.Message });
-                return BadRequest();
-            }
-
+            return Ok(model);
+        }
+        catch (Exception ex)
+        {
+            model.Errors.Add(new ErrorModel { ErrorMessage = ex.Message });
+            return BadRequest();
         }
     }
 }

@@ -1,19 +1,17 @@
 @model  Domain.Entities.ResultViewModel
-     
-
 
 @if (Model.Errors.Any())
 {
     foreach (var error in Model.Errors)
     {
         <div class="alert alert-warning" role="alert">
-            Message     : @error.ErrorMessage
-            <br /> 
+            Message : @error.ErrorMessage
+            <br/>
             Status Code : @error.StatusCode
-            
+
         </div>
         <div class="row">
-            @Html.ActionLink("You can click this link to try again","Index","Sender")
+            @Html.ActionLink("You can click this link to try again", "Index", "Sender")
         </div>
     }
 }
@@ -23,11 +21,11 @@ else
         <h5 class="card-title">Decrypted data returned from API</h5>
         <div class="card-body">
             <div id="divResult"></div>
-            
+
             <div>
                 @Model.Data
             </div>
-            
+
             <script>
                 
                 console.log(@Model.Data);
@@ -45,7 +43,7 @@ else
     
                 document.getElementById("divResult").innerHTML = result;
             </script>
-            
+
         </div>
     </div>
 }

@@ -7,42 +7,40 @@ using Microsoft.Extensions.Options;
 using Sender.Models;
 using Sender.Services.Contracts;
 
-namespace Sender.Services
+namespace Sender.Services;
+
+public class FileManagementService : IFileManagementService
 {
-    public class FileManagementService : IFileManagementService
+    private readonly string _contentRootPath;
+    private readonly UploadSettings _settings;
+
+    public FileManagementService(IOptions<UploadSettings> settings, IWebHostEnvironment environment)
     {
-        private readonly UploadSettings _settings;
+        _settings = settings.Value;
+        _contentRootPath = environment.ContentRootPath;
+    }
 
-        private readonly string _contentRootPath;
+    public async Task<(bool result, string savedFilePath)> SaveZipFileToLocalFolder(IFormFile file)
+    {
+        var combinedPath =
+            Path.Combine(_contentRootPath, _settings.ZipPath);
 
-        public FileManagementService(IOptions<UploadSettings> settings, IWebHostEnvironment environment)
+        if (!Directory.Exists(combinedPath))
+            Directory.CreateDirectory(combinedPath);
+
+        if (file.Length > 0)
         {
-            this._settings = settings.Value;
-            _contentRootPath = environment.ContentRootPath;
-        }
+            var fullPath = Path.Combine(combinedPath,
+                $"{Path.GetFileNameWithoutExtension(file.FileName)}{DateTime.UtcNow:yyyyMMddHmmss}.zip");
 
-        public async Task<(bool result, string savedFilePath)> SaveZipFileToLocalFolder(IFormFile file)
-        {
-            var combinedPath =
-                Path.Combine(_contentRootPath, _settings.ZipPath);
-
-            if (!Directory.Exists(combinedPath))
-                Directory.CreateDirectory(combinedPath);
-
-            if (file.Length > 0)
+            await using (var fileStream = new FileStream(fullPath, FileMode.Create, FileAccess.Write))
             {
-                string fullPath = Path.Combine(combinedPath,
-                    $"{Path.GetFileNameWithoutExtension(file.FileName)}{DateTime.UtcNow:yyyyMMddHmmss}.zip");
-
-                await using (var fileStream = new FileStream(fullPath, FileMode.Create, FileAccess.Write))
-                {
-                    await file.CopyToAsync(fileStream);
-                }
-
-                return (true, fullPath);
+                await file.CopyToAsync(fileStream);
             }
 
-            return (false, null);
+            return (true, fullPath);
         }
+
+        return (false, null);
     }
 }

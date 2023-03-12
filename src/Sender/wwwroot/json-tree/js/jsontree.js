@@ -1,4 +1,4 @@
-var JSONTree = (function() {
+var JSONTree = (function () {
 
     var escapeMap = {
         '&': '&amp;',
@@ -16,22 +16,22 @@ var JSONTree = (function() {
     var id = 0;
     var instances = 0;
 
-    this.create = function(data, settings) {
+    this.create = function (data, settings) {
         instances += 1;
         return _span(_jsVal(data, 0, false), {class: 'jstValue'});
     };
 
-    var _escape = function(text) {
-        return text.replace(/[&<>'"]/g, function(c) {
+    var _escape = function (text) {
+        return text.replace(/[&<>'"]/g, function (c) {
             return escapeMap[c];
         });
     };
 
-    var _id = function() {
+    var _id = function () {
         return instances + '_' + id++;
     };
 
-    var _jsVal = function(value, depth, indent) {
+    var _jsVal = function (value, depth, indent) {
         if (value !== null) {
             var type = typeof value;
             switch (type) {
@@ -53,9 +53,9 @@ var JSONTree = (function() {
         }
     };
 
-    var _jsObj = function(object, depth, indent) {
+    var _jsObj = function (object, depth, indent) {
         var id = _id();
-        var content = Object.keys(object).map(function(property) {
+        var content = Object.keys(object).map(function (property) {
             return _property(property, object[property], depth + 1, true);
         }).join(_comma());
         var body = [
@@ -66,9 +66,9 @@ var JSONTree = (function() {
         return _span(body, {});
     };
 
-    var _jsArr = function(array, depth, indent) {
+    var _jsArr = function (array, depth, indent) {
         var id = _id();
-        var body = array.map(function(element) {
+        var body = array.map(function (element) {
             return _jsVal(element, depth + 1, true);
         }).join(_comma());
         var arr = [
@@ -79,53 +79,53 @@ var JSONTree = (function() {
         return arr;
     };
 
-    var _jsStr = function(value, depth) {
+    var _jsStr = function (value, depth) {
         var jsonString = _escape(JSON.stringify(value));
         return _span(_indent(jsonString, depth), {class: 'jstStr'});
     };
 
-    var _jsNum = function(value, depth) {
+    var _jsNum = function (value, depth) {
         return _span(_indent(value, depth), {class: 'jstNum'});
     };
 
-    var _jsBool = function(value, depth) {
+    var _jsBool = function (value, depth) {
         return _span(_indent(value, depth), {class: 'jstBool'});
     };
 
-    var _jsNull = function(depth) {
+    var _jsNull = function (depth) {
         return _span(_indent('null', depth), {class: 'jstNull'});
     };
 
-    var _property = function(name, value, depth) {
+    var _property = function (name, value, depth) {
         var property = _indent(_escape(JSON.stringify(name)) + ': ', depth);
         var propertyValue = _span(_jsVal(value, depth, false), {});
         return _span(property + propertyValue, {class: 'jstProperty'});
     };
 
-    var _comma = function() {
+    var _comma = function () {
         return _span(',\n', {class: 'jstComma'});
     };
 
-    var _span = function(value, attrs) {
+    var _span = function (value, attrs) {
         return _tag('span', attrs, value);
     };
 
-    var _tag = function(tag, attrs, content) {
-        return '<' + tag + Object.keys(attrs).map(function(attr) {
+    var _tag = function (tag, attrs, content) {
+        return '<' + tag + Object.keys(attrs).map(function (attr) {
                 return ' ' + attr + '="' + attrs[attr] + '"';
             }).join('') + '>' +
             content +
             '</' + tag + '>';
     };
 
-    var _openBracket = function(symbol, depth, id) {
+    var _openBracket = function (symbol, depth, id) {
         return (
             _span(_indent(symbol, depth), {class: 'jstBracket'}) +
             _span('', {class: 'jstFold', onclick: 'JSONTree.toggle(\'' + id + '\')'})
         );
     };
 
-    this.toggle = function(id) {
+    this.toggle = function (id) {
         var element = document.getElementById(id);
         var parent = element.parentNode;
         var toggleButton = element.previousElementSibling;
@@ -140,11 +140,11 @@ var JSONTree = (function() {
         }
     };
 
-    var _closeBracket = function(symbol, depth) {
+    var _closeBracket = function (symbol, depth) {
         return _span(_indent(symbol, depth), {});
     };
 
-    var _indent = function(value, depth) {
+    var _indent = function (value, depth) {
         return Array((depth * 2) + 1).join(' ') + value;
     };
 

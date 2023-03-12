@@ -1,14 +1,12 @@
-﻿ 
-namespace Infrastructure.Network.Contracts
+﻿namespace Infrastructure.Network.Contracts;
+
+public interface IHttpClientWrapper
 {
-    public interface IHttpClientWrapper
-    {
-        string BaseUrl { get; set; }
+    string BaseUrl { get; set; }
 
-        string AuthorizationHeader { get; set; }
+    string AuthorizationHeader { get; set; }
 
-        string AuthorizationValue { get; set; }
+    string AuthorizationValue { get; set; }
 
-        Task<TDto?> PostAsync<TDto>(object dto);
-    }
+    Task<TDto?> PostAsync<TDto>(object dto);
 }

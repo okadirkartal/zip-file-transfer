@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Sender.Attributes;
 
 namespace Sender.Models;
+
 public class UploadViewModel
 {
     [Required] public string UserName { get; set; }

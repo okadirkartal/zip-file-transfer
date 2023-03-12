@@ -1,80 +1,78 @@
 ﻿using System.Collections.Generic;
-using System.IO; 
-using Microsoft.Extensions.Configuration;
-using NSubstitute;
-using NUnit.Framework;
-using System.Text.Json;
+using System.IO;
 using Domain.Entities;
 using Infrastructure.Persistence;
 using Infrastructure.Persistence.Contracts;
+using Microsoft.Extensions.Configuration;
+using NSubstitute;
+using NUnit.Framework;
 
-namespace tests.ZipFileTests
+namespace tests.ZipFileTests;
+
+public class DocumentPersistenceTests
 {
-    public class DocumentPersistenceTests
+    private IConfiguration _configuration;
+    private IDocumentPersistenceService _documentPersistenceService;
+
+    private string bsonDocumentId;
+
+    [SetUp]
+    public void SetUp()
     {
-        private IDocumentPersistenceService _documentPersistenceService;
+        _configuration = Substitute.For<IConfiguration>();
 
-        private IConfiguration _configuration;
+        var dbPath = "../../../Data/Documents.db";
 
-        private string bsonDocumentId;
+        _configuration["Storage:ConnectionString"]
+            .Returns("FileName=../../../Data/Documents.db;Timeout=10; Journal=false;Mode=Exclusive");
 
-        [SetUp]
-        public void SetUp()
+
+        if (!File.Exists(dbPath))
         {
-            _configuration = Substitute.For<IConfiguration>();
+            Directory.CreateDirectory("../../../Data");
+            File.Create(dbPath);
+        }
 
-            string dbPath = "../../../Data/Documents.db";
+        _documentPersistenceService = new DocumentPersistenceService(_configuration);
+    }
 
-            _configuration["Storage:ConnectionString"].Returns("FileName=../../../Data/Documents.db;Timeout=10; Journal=false;Mode=Exclusive");
+    [Test]
+    public void SaveJsonData_WhenInserted_ReturnsTrue()
+    {
+        bsonDocumentId = _documentPersistenceService.SaveDocument(GetDirectoryModel());
 
+        Assert.NotNull(bsonDocumentId);
 
-            if (!File.Exists(dbPath))
+        GetDocument_WhenIsValid_ReturnsTrue();
+    }
+
+    [Test]
+    public void GetDocument_WhenIsValid_ReturnsTrue()
+    {
+        if (string.IsNullOrWhiteSpace(bsonDocumentId))
+            SaveJsonData_WhenInserted_ReturnsTrue();
+
+        var bsonDocument = _documentPersistenceService.GetDocument(bsonDocumentId);
+
+        Assert.NotNull(bsonDocument);
+    }
+
+    private DirectoryModel GetDirectoryModel()
+    {
+        var _model = new DirectoryModel();
+        _model._itemNameFlat = "root";
+        _model.subItems = new List<DirectoryModel>
+        {
+            new()
             {
-                Directory.CreateDirectory("../../../Data");
-                File.Create(dbPath);
-            }
-
-            _documentPersistenceService = new DocumentPersistenceService(_configuration);
-        }
-
-        [Test]
-        public void SaveJsonData_WhenInserted_ReturnsTrue()
-        {
-            bsonDocumentId = _documentPersistenceService.SaveDocument(GetDirectoryModel());
-
-            Assert.NotNull(bsonDocumentId);
-
-            GetDocument_WhenIsValid_ReturnsTrue();
-        }
-
-        [Test]
-        public void GetDocument_WhenIsValid_ReturnsTrue()
-        {
-            if (string.IsNullOrWhiteSpace(bsonDocumentId))
-                SaveJsonData_WhenInserted_ReturnsTrue();
-
-            var bsonDocument = _documentPersistenceService.GetDocument(bsonDocumentId);
-
-            Assert.NotNull(bsonDocument);
-        }
-
-        private DirectoryModel GetDirectoryModel()
-        {
-            DirectoryModel _model = new DirectoryModel();
-            _model._itemNameFlat = "root";
-            _model.subItems = new List<DirectoryModel>()
-            {
-                new DirectoryModel()
+                _itemNameFlat = "first item",
+                item = "data 2",
+                subItems = new List<DirectoryModel>
                 {
-                    _itemNameFlat = "first item",
-                    item = "data 2",
-                    subItems = new List<DirectoryModel>()
-                    {
-                        new DirectoryModel() { _itemNameFlat = "third item", item = "data 3" }
-                    }
+                    new() { _itemNameFlat = "third item", item = "data 3" }
                 }
-            };
-            return _model;
-        }
+            }
+        };
+        return _model;
     }
 }

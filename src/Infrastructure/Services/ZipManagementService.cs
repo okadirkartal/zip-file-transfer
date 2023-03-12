@@ -1,41 +1,36 @@
-
 using System.IO.Compression;
+using Domain.Entities;
 using Infrastructure.Security.Contracts;
 using Infrastructure.Services.Contracts;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using Domain.Entities;
 using Microsoft.Extensions.Configuration;
 
-namespace Infrastructure.Services
+namespace Infrastructure.Services;
+
+public class ZipManagementService : IZipManagementService
 {
-    public class ZipManagementService : IZipManagementService
+    private readonly IConfiguration _configuration;
+    private readonly IEncrypter _encrypter;
+
+    public ZipManagementService(IConfiguration configuration,
+        IEncrypter encrypter)
     {
-        private readonly IEncrypter _encrypter;
+        _configuration = configuration;
+        _encrypter = encrypter;
+    }
 
-        private readonly IConfiguration _configuration;
+    public async Task<DirectoryModel> GetSerializedDirectoryStructure(string savedZipFilePath)
+    {
+        return await DirectoryService.CreateEncyptedDirectoryNode(UnzipFileToGivenPath(savedZipFilePath),
+            _encrypter);
+    }
 
-        public ZipManagementService(IConfiguration configuration,
-            IEncrypter encrypter)
-        {
-            this._configuration = configuration;
-            this._encrypter = encrypter;
-        }
+    private string UnzipFileToGivenPath(string savedZipFilePath)
+    {
+        using var zipFile = ZipFile.OpenRead(savedZipFilePath);
+        var saveablePath = Path.Combine(_configuration["UploadSettings:ZipPath"] ?? string.Empty,
+            Path.GetFileNameWithoutExtension(savedZipFilePath));
 
-        private string UnzipFileToGivenPath(string savedZipFilePath)
-        {
-            using ZipArchive zipFile = ZipFile.OpenRead(savedZipFilePath);
-            string saveablePath = Path.Combine(_configuration["UploadSettings:ZipPath"] ?? string.Empty,
-                Path.GetFileNameWithoutExtension(savedZipFilePath));
-
-            zipFile.ExtractToDirectory(saveablePath, true);
-            return saveablePath;
-        }
-
-        public async Task<DirectoryModel> GetSerializedDirectoryStructure(string savedZipFilePath)
-        {
-            return await DirectoryService.CreateEncyptedDirectoryNode(UnzipFileToGivenPath(savedZipFilePath),
-                    _encrypter); 
-        }
+        zipFile.ExtractToDirectory(saveablePath, true);
+        return saveablePath;
     }
 }

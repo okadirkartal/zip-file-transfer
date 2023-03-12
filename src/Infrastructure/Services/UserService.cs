@@ -1,33 +1,33 @@
-
 using Domain.Entities;
-using Microsoft.Extensions.Configuration;
-using Infrastructure.Services.Contracts;
 using Infrastructure.Security.Contracts;
+using Infrastructure.Services.Contracts;
+using Microsoft.Extensions.Configuration;
 
-namespace Infrastructure.Services
+namespace Infrastructure.Services;
+
+public class UserService : IUserService
 {
-    public class UserService : IUserService
+    private readonly IConfiguration _configuration;
+
+    private readonly IDecrypter _decrypter;
+
+    public UserService(IConfiguration configuration, IDecrypter decrypter)
     {
-        private readonly IConfiguration _configuration;
+        _configuration = configuration;
+        _decrypter = decrypter;
+    }
 
-        private readonly IDecrypter _decrypter;
-
-        public UserService(IConfiguration configuration, IDecrypter decrypter)
+    public async Task<UserModel?> AuthenticateAsync(string username, string password)
+    {
+        var user = new UserModel
         {
-            _configuration = configuration;
-            _decrypter = decrypter;
-        }
-
-        public async Task<UserModel?> AuthenticateAsync(string username, string password)
-        {
-            var user = new UserModel
-            {
-                UserName = await _decrypter.DecryptAsync(username),
-                Password = await _decrypter.DecryptAsync(password)
-            };
-            return _configuration["Credentials:UserName"] == user.UserName
-                   &&
-                   _configuration["Credentials:Password"] == user.Password ? user : null;
-        }
+            UserName = await _decrypter.DecryptAsync(username),
+            Password = await _decrypter.DecryptAsync(password)
+        };
+        return _configuration["Credentials:UserName"] == user.UserName
+               &&
+               _configuration["Credentials:Password"] == user.Password
+            ? user
+            : null;
     }
 }

@@ -1,5 +1,5 @@
- 
 namespace Domain.Entities;
+
 public class ResultViewModel
 {
     public ResultViewModel()

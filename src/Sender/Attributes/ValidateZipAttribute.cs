@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Http;
 
 namespace Sender.Attributes;
+
 public class ValidateZipAttribute : ValidationAttribute
 {
     public override bool IsValid(object value)
@@ -10,22 +11,22 @@ public class ValidateZipAttribute : ValidationAttribute
         const int maxContentLength = 1024 * 1024 * 10; //Max 10 MB file
 
 
-        var allowedFileExtensions = new string[] { ".zip" };
+        var allowedFileExtensions = new[] { ".zip" };
 
-        if (!(value is IFormFile file))
-            return false;
+        if (!(value is IFormFile file)) return false;
 
-        else if (!((IList)allowedFileExtensions).Contains(file.FileName.Substring(file.FileName.LastIndexOf('.'))
-            .ToLower()))
+        if (!((IList)allowedFileExtensions).Contains(file.FileName.Substring(file.FileName.LastIndexOf('.'))
+                .ToLower()))
         {
             ErrorMessage = "Please upload Your file of type: " +
                            string.Join(", ", allowedFileExtensions);
             return false;
         }
-        else if (file.Length > maxContentLength)
+
+        if (file.Length > maxContentLength)
         {
             ErrorMessage = "Your file is too large, maximum allowed size is : "
-                           + (maxContentLength / 1024).ToString() + "MB";
+                           + maxContentLength / 1024 + "MB";
             return false;
         }
 
