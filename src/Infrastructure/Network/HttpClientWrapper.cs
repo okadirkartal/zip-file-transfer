@@ -1,67 +1,51 @@
 
 using System.Net.Http.Headers;
+using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
-namespace Infrastructure.Network.Contracts
+using Infrastructure.Network.Contracts;
+
+namespace Infrastructure.Network;
+
+public class HttpClientWrapper : IHttpClientWrapper
 {
-    public class HttpClientWrapper : IHttpClientWrapper
+    private readonly IHttpClientFactory _httpClientFactory = null!; 
+    public HttpClientWrapper(IHttpClientFactory httpClientFactory)
     {
-        private HttpClient _client;
+        _httpClientFactory = httpClientFactory;
+    }
+    public string BaseUrl { get; set; }
 
-        public string BaseUrl { get; set; }
+    public string AuthorizationHeader { get; set; }
 
-        public string AuthorizationHeader { get; set; }
+    public string AuthorizationValue { get; set; }
 
-        public string AuthorizationValue { get; set; }
 
-        public HttpClientWrapper() {}
-        
-        public async Task<TResponseDto> PostAsync<TResponseDto>(string endpoint, string dto)
-        {
-            if (string.IsNullOrEmpty(endpoint)) throw new ArgumentNullException(nameof(endpoint));
+    public async Task<TResponseDto?> PostAsync<TResponseDto>(object dto)
+    {
+        if (dto == null) throw new ArgumentNullException(nameof(dto));
 
-            if (dto == null) throw new ArgumentNullException(nameof(dto));
-            
-            string content = JsonSerializer.Serialize(dto);
+        JsonContent content = JsonContent.Create(dto); 
 
-            HttpContent httpContent = new StringContent(content, Encoding.UTF8, "application/json");
+        using HttpClient _client  = _httpClientFactory.CreateClient();
+        InitializeCredentials(_client);
+        HttpResponseMessage responseMessage = await _client.PostAsync(_client.BaseAddress, content);
 
-            _client = GetHttpClient();
-            
-            HttpResponseMessage responseMessage = await _client.PostAsync(endpoint, httpContent);
+        var data = await responseMessage.Content.ReadAsStringAsync();
 
-            _client.Dispose();
+        return JsonSerializer.Deserialize<TResponseDto>(data);
+    }
 
-            var data = await responseMessage.Content.ReadAsStringAsync();
+    private HttpClient InitializeCredentials(HttpClient _client)
+    { 
+        _client.BaseAddress = new Uri(BaseUrl);
 
-            return JsonSerializer.Deserialize<TResponseDto>(data);
-        }
+        _client.DefaultRequestHeaders.Accept.Add(
+            new MediaTypeWithQualityHeaderValue("application/json"));
 
-        public void AddHeader(string name, string value)
-        {
-            if (!_client.DefaultRequestHeaders.Contains(name))
-                _client.DefaultRequestHeaders.Add(name, value);
-        }
+        _client.DefaultRequestHeaders.Authorization =
+            new AuthenticationHeaderValue(AuthorizationHeader, AuthorizationValue);
 
-        public void SetAuthorization(string authorizationType, string userName, string password)
-        {
-            this._client.DefaultRequestHeaders.Add(authorizationType,
-                "Basic " + $"{userName}:{password}");
-        }
-        
-        private HttpClient GetHttpClient()
-        {
-            _client = new HttpClient();
-
-            _client.BaseAddress = new Uri(BaseUrl);
-
-            _client.DefaultRequestHeaders.Accept.Add(
-                new MediaTypeWithQualityHeaderValue("application/json"));
-
-            _client.DefaultRequestHeaders.Authorization =
-                new AuthenticationHeaderValue(AuthorizationHeader, AuthorizationValue);
-
-            return _client;
-        }
+        return _client;
     }
 }

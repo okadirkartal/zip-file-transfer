@@ -72,11 +72,9 @@ namespace tests.ZipFileTests
                 }
             }
 
-            _zipManagementService = new ZipManagementService(_configuration, _encrypter);
+            _zipManagementService = new ZipManagementService(_configuration, _encrypter); 
 
-            string result = await _zipManagementService.GetSerializedDirectoryStructure(zipFile);
-
-            var directoryModel =  System.Text.Json.JsonSerializer.Deserialize<DirectoryModel>(result);
+            var directoryModel =  await _zipManagementService.GetSerializedDirectoryStructure(zipFile);
 
             Assert.NotNull(directoryModel);
         }

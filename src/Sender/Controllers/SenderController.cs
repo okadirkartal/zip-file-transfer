@@ -38,7 +38,6 @@ public class SenderController : Controller
     }
 
     [HttpPost]
-    [ValidateAntiForgeryToken]
     public async Task<IActionResult> Index([Required] UploadViewModel model)
     {
         if (model == null) return BadRequest();
@@ -53,7 +52,7 @@ public class SenderController : Controller
 
                 // var encryptedData = await _encrypter.EncryptAsync(result);
 
-                var response = await _transferService.PostToRecipientAsync("Post",
+                var response = await _transferService.PostToRecipientAsync(
                     new TransferModel()
                     {
                         UserName = await _encrypter.EncryptAsync(model.UserName),
@@ -62,7 +61,7 @@ public class SenderController : Controller
                     });
 
                 if (response == null)
-                    return View("Result", new ResultViewModel()
+                    return View("Result", new ResultViewModel
                     {
                         Errors = new List<ErrorModel>()
                             {

@@ -4,5 +4,5 @@ using Domain.Entities;
 namespace Sender.Services.Contracts;
 public interface ITransferService
 {
-    Task<ResultViewModel> PostToRecipientAsync(string endPoint, TransferModel model);
+    Task<ResultViewModel> PostToRecipientAsync(TransferModel model);
 }

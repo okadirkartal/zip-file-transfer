@@ -34,7 +34,7 @@ namespace Sender.Services
                 string fullPath = Path.Combine(combinedPath,
                     $"{Path.GetFileNameWithoutExtension(file.FileName)}{DateTime.UtcNow:yyyyMMddHmmss}.zip");
 
-                using (var fileStream = new FileStream(fullPath, FileMode.Create, FileAccess.Write))
+                await using (var fileStream = new FileStream(fullPath, FileMode.Create, FileAccess.Write))
                 {
                     await file.CopyToAsync(fileStream);
                 }

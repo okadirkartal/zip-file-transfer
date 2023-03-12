@@ -3,5 +3,5 @@ public class TransferModel : UserModel
 {
     public string Id { get; set; }
 
-    public string JsonData { get; set; }
+    public DirectoryModel JsonData { get; set; }
 }

@@ -1,10 +1,10 @@
 using Domain.Entities;
 using LiteDB;
 
-namespace Infrastructure.Persistence;
+namespace Infrastructure.Persistence.Contracts;
 public interface IDocumentPersistenceService
 {
-    BsonValue SaveDocument(string data);
+    BsonValue SaveDocument(DirectoryModel data);
 
     TransferModel GetDocument(string bsonId);
 }

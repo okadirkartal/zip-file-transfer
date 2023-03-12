@@ -1,4 +1,5 @@
 using Infrastructure.Persistence;
+using Infrastructure.Persistence.Contracts;
 using Infrastructure.Security;
 using Infrastructure.Security.Contracts;
 using Infrastructure.Services;
