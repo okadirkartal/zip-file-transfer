@@ -1,7 +1,7 @@
  
 using Domain.Entities;
 using LiteDB;
-using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration; 
 
 namespace Infrastructure.Persistence;
 public class DocumentPersistenceService : IDocumentPersistenceService
@@ -9,8 +9,7 @@ public class DocumentPersistenceService : IDocumentPersistenceService
     private readonly IConfiguration _configuration; 
 
     private string _liteDbConnectionString;
-
-
+    
     public DocumentPersistenceService(IConfiguration configuration)
     {
         this._configuration = configuration;
@@ -35,11 +34,12 @@ public class DocumentPersistenceService : IDocumentPersistenceService
         }
     }
 
-    public BsonDocument GetDocument(string bsonId)
+    public TransferModel GetDocument(string bsonId)
     {
         using (var db = new LiteDatabase(_liteDbConnectionString))
         {
-            return db.Engine.FindById(nameof(TransferModel), bsonId);
+            var collection = db.GetCollection<TransferModel>();
+            return collection.FindById(bsonId);  
         }
     }
 }

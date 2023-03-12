@@ -4,8 +4,8 @@ using Microsoft.Extensions.Configuration;
 using NSubstitute;
 using NUnit.Framework;
 using System.Text.Json;
+using Domain.Entities;
 using Infrastructure.Persistence;
-using Infrastructure.Services;
 
 namespace tests.ZipFileTests
 {
@@ -59,16 +59,20 @@ namespace tests.ZipFileTests
 
         private DirectoryModel GetDirectoryModel()
         {
-            DirectoryModel _model = new DirectoryModel("root", "");
-
-            _model.subItems.Add(new DirectoryModel("first item", "")
+            DirectoryModel _model = new DirectoryModel();
+            _model._itemNameFlat = "root";
+            _model.subItems = new List<DirectoryModel>()
             {
-                item = "data 2",
-                subItems = new List<DirectoryModel>()
+                new DirectoryModel()
                 {
-                    new DirectoryModel("third item", "") {item = "data3"}
+                    _itemNameFlat = "first item",
+                    item = "data 2",
+                    subItems = new List<DirectoryModel>()
+                    {
+                        new DirectoryModel() { _itemNameFlat = "third item", item = "data 3" }
+                    }
                 }
-            });
+            };
             return _model;
         }
     }

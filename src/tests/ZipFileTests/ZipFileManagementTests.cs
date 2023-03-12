@@ -1,12 +1,12 @@
 using System.IO;
 using System.IO.Compression;
 using System.Threading.Tasks;
+using Domain.Entities;
 using Infrastructure.Security.Contracts;
 using Infrastructure.Security.Cryptor;
 using Infrastructure.Services;
 using Microsoft.Extensions.Configuration;
-using NSubstitute;
-using Newtonsoft.Json;
+using NSubstitute; 
 using NUnit.Framework;
 
 
@@ -76,7 +76,7 @@ namespace tests.ZipFileTests
 
             string result = await _zipManagementService.GetSerializedDirectoryStructure(zipFile);
 
-            var directoryModel = JsonConvert.DeserializeObject<DirectoryModel>(result);
+            var directoryModel =  System.Text.Json.JsonSerializer.Deserialize<DirectoryModel>(result);
 
             Assert.NotNull(directoryModel);
         }

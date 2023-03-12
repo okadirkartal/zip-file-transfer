@@ -26,7 +26,7 @@ namespace Infrastructure.Services
                 Password = await _decrypter.DecryptAsync(password)
             };
 
-            return _configuration["Credentials:UserName"] == userModel.UserName
+            return _configuration["Credentials:UserName"] == userModel.UserName 
                    &&
                    _configuration["Credentials:Password"] == userModel.Password
                 ? userModel
