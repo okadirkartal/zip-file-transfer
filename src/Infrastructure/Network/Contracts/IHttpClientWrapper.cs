@@ -9,8 +9,6 @@ namespace Infrastructure.Network.Contracts
 
         string AuthorizationValue { get; set; }
 
-        Task<TDto> PostAsync<TDto>(string endpoint, string dto);
-
-        void SetAuthorization(string authorizationType, string userName, string password);
+        Task<TDto?> PostAsync<TDto>(object dto);
     }
 }

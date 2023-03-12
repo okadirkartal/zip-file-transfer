@@ -47,20 +47,19 @@ namespace tests.ZipFileTests
         [Test]
         public async Task PostToRecipient_WhenIsValid_ReturnsTrue()
         {
-            string endpoint = "Post";
 
             DirectoryModel directoryModel = new DirectoryModel { _itemNameFlat =  "test",item = "test", subItems = new List<DirectoryModel>()};
             TransferModel transferModel = new TransferModel()
             {
-                JsonData = JsonSerializer.Serialize(directoryModel,new JsonSerializerOptions(){ DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull}),
+                JsonData = directoryModel,
                 UserName = "demo",
                 Password = "test"
             };
 
             SharedSettings settings = _settings.Value;
-            _httpClient.PostAsync<ResultViewModel>(endpoint, transferModel.JsonData).Returns(new ResultViewModel());
+            _httpClient.PostAsync<ResultViewModel>(transferModel.JsonData).Returns(new ResultViewModel());
             
-            var result = await _transferService.PostToRecipientAsync(endpoint, transferModel);
+            var result = await _transferService.PostToRecipientAsync(transferModel);
 
             Assert.LessOrEqual(0, result.Errors.Count());
         }
@@ -70,7 +69,7 @@ namespace tests.ZipFileTests
         public void PostToRecipientAsync_WhenArgumentIsNull_ThrowsNullReferenceException()
         {
             // act & assert
-            Assert.ThrowsAsync<NullReferenceException>(() => _transferService.PostToRecipientAsync(null, null));
+            Assert.ThrowsAsync<NullReferenceException>(() => _transferService.PostToRecipientAsync(null));
         }
     }
 }

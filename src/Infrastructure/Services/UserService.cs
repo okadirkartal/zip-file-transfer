@@ -18,19 +18,16 @@ namespace Infrastructure.Services
             _decrypter = decrypter;
         }
 
-        public async Task<UserModel> AuthenticateAsync(string username, string password)
+        public async Task<UserModel?> AuthenticateAsync(string username, string password)
         {
-            var userModel = new UserModel()
+            var user = new UserModel
             {
                 UserName = await _decrypter.DecryptAsync(username),
                 Password = await _decrypter.DecryptAsync(password)
             };
-
-            return _configuration["Credentials:UserName"] == userModel.UserName 
+            return _configuration["Credentials:UserName"] == user.UserName
                    &&
-                   _configuration["Credentials:Password"] == userModel.Password
-                ? userModel
-                : null;
+                   _configuration["Credentials:Password"] == user.Password ? user : null;
         }
     }
 }

@@ -17,8 +17,6 @@ namespace  Infrastructure.Security
 
             byte[] encryptedData = Convert.FromBase64String(data);
 
-            string decryptableText = null;
-
             using (Aes aes = Aes.Create())
             {
                 aes.Key = _cryptoKey;
@@ -41,9 +39,10 @@ namespace  Infrastructure.Security
 
                 ICryptoTransform decrypt = aes.CreateDecryptor(aes.Key, aes.IV);
 
+                string decryptableText = null;
                 using (var memoryStream = new MemoryStream(cipherText))
                 {
-                    using (var cryptoStream = new CryptoStream(memoryStream, decrypt, CryptoStreamMode.Read))
+                    await using (var cryptoStream = new CryptoStream(memoryStream, decrypt, CryptoStreamMode.Read))
                     {
                         using (var streamReader = new StreamReader(cryptoStream))
                         {

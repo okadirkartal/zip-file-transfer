@@ -6,6 +6,7 @@ using NUnit.Framework;
 using System.Text.Json;
 using Domain.Entities;
 using Infrastructure.Persistence;
+using Infrastructure.Persistence.Contracts;
 
 namespace tests.ZipFileTests
 {
@@ -39,7 +40,7 @@ namespace tests.ZipFileTests
         [Test]
         public void SaveJsonData_WhenInserted_ReturnsTrue()
         {
-            bsonDocumentId = _documentPersistenceService.SaveDocument(JsonSerializer.Serialize(GetDirectoryModel()));
+            bsonDocumentId = _documentPersistenceService.SaveDocument(GetDirectoryModel());
 
             Assert.NotNull(bsonDocumentId);
 

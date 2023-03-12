@@ -2,18 +2,17 @@
 using System.Net;
 using System.Threading.Tasks;
 using Domain.Entities;
-using Infrastructure.Services;
-using Infrastructure.Persistence;
-using Microsoft.AspNetCore.Authorization;
+using Infrastructure.Persistence.Contracts;
+using Infrastructure.Services; 
 using Microsoft.AspNetCore.Mvc;
 using Infrastructure.Security.Contracts;
-using LiteDB;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Recipient.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
     [Authorize]
+    [ApiController]
     public class RecipientController : ControllerBase
     {
         private readonly IDocumentPersistenceService _documentPersistenceService;
@@ -27,34 +26,36 @@ namespace Recipient.Controllers
         }
 
         // GET api/values
-        [HttpPost, Route("Post")]
-        public async Task<ActionResult<ResultViewModel>> Post([FromBody] string jsonData)
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] DirectoryModel jsonData)
         {
             ResultViewModel model = new ResultViewModel();
 
-            if (string.IsNullOrEmpty(jsonData))
+            if (jsonData == null)
             {
                 model.Errors.Add(new ErrorModel
                 { StatusCode = (int)HttpStatusCode.NoContent, ErrorMessage = nameof(HttpStatusCode.NoContent) });
-                return model;
+                return NoContent();
             }
 
             try
             {
-                var decryptedData = await DirectoryService.GetDecryptedDirectoryNode(jsonData, _decrypter);
+                await DirectoryService.GetDecryptedDirectoryNode(jsonData, _decrypter);
 
-                var bsonDocument = _documentPersistenceService.SaveDocument(decryptedData);
+                var bsonDocument = _documentPersistenceService.SaveDocument(jsonData);
 
                 var savedData = _documentPersistenceService.GetDocument(bsonDocument);
 
                 model.Data = System.Text.Json.JsonSerializer.Serialize(savedData);
+                
+                return Ok(model);
             }
             catch (Exception ex)
             {
                 model.Errors.Add(new ErrorModel { ErrorMessage = ex.Message });
+                return BadRequest();
             }
 
-            return model;
         }
     }
 }

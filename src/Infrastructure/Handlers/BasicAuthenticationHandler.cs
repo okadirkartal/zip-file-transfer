@@ -29,7 +29,7 @@ namespace Infrastructure.Handlers
             if (!Request.Headers.ContainsKey("Authorization"))
                 return AuthenticateResult.Fail("Missing Authorization Header");
 
-            UserModel user = null;
+            UserModel? user = null;
             try
             {
                 var authHeader = AuthenticationHeaderValue.Parse(Request.Headers["Authorization"]);
@@ -37,14 +37,14 @@ namespace Infrastructure.Handlers
                 var username = credentials[0];
                 var password = credentials[1];
                 user = await _userService.AuthenticateAsync(username, password);
+                if (user == null)
+                    return await Task.FromResult(AuthenticateResult.Fail("Invalid Username or Password"));
             }
             catch
             {
-                return AuthenticateResult.Fail("Invalid Authorization Header");
+                return await Task.FromResult(AuthenticateResult.Fail("Invalid Authorization Header"));
             }
-
-            if (user == null)
-                return AuthenticateResult.Fail("Invalid Username or Password");
+ 
 
             var claims = new[]
             {
@@ -53,10 +53,9 @@ namespace Infrastructure.Handlers
             };
 
             var identity = new ClaimsIdentity(claims, Scheme.Name);
-            var principal = new ClaimsPrincipal(identity);
-            var ticket = new AuthenticationTicket(principal, Scheme.Name);
+            var principal = new ClaimsPrincipal(identity); 
 
-            return AuthenticateResult.Success(ticket);
+            return await Task.FromResult(AuthenticateResult.Success(new AuthenticationTicket(principal, Scheme.Name)));
         }
     }
 }

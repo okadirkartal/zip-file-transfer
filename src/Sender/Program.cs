@@ -2,22 +2,16 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting; 
 using System.IO;
 using Domain.Shared;
+using Infrastructure.Extensions;
 using Sender.Models;
 using Sender.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddServices();
-var env = builder.Environment;
-var sharedFolder = Path.Combine(env.ContentRootPath, "..", "Shared");
-builder.Configuration.AddJsonFile(Path.Combine(sharedFolder, "SharedSettings.json"), optional: true)
-.AddJsonFile("SharedSettings.json", optional: true)
-.AddJsonFile("appsettings.json", optional: true)
-.AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
-.AddEnvironmentVariables();
+builder.Services.AddServices(); 
+builder.Configuration.AddConfigurationFiles(builder.Environment.ContentRootPath, builder.Environment.EnvironmentName);
 
 builder.Services.AddOptions<UploadSettings>()
 .BindConfiguration("UploadSettings")
@@ -52,7 +46,7 @@ else
 app.UseHttpsRedirection();
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Sender}/{action=Index}");
 
 app.Run();
 

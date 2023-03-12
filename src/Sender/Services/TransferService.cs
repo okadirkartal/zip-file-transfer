@@ -21,13 +21,13 @@ namespace Sender.Services
             this._settings = settings?.Value ?? throw new ArgumentNullException(nameof(settings));
         }
 
-        public async Task<ResultViewModel> PostToRecipientAsync(string endPoint, TransferModel model)
+        public async Task<ResultViewModel> PostToRecipientAsync(TransferModel model)
         {
             this._httpClient.BaseUrl = _settings.RecipientApi.BaseUrl;
             this._httpClient.AuthorizationHeader = _settings.Security.Header;
             this._httpClient.AuthorizationValue = $"{model.UserName}:{model.Password}";
 
-            var response = await _httpClient.PostAsync<ResultViewModel>(endPoint, model.JsonData);
+            var response = await _httpClient.PostAsync<ResultViewModel>(model.JsonData);
 
             return response;
         }

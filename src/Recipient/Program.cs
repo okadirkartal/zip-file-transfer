@@ -4,9 +4,8 @@
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Configuration;
-using System.IO;
+using Microsoft.Extensions.Hosting; 
+using Infrastructure.Extensions;
 using Microsoft.AspNetCore.Authentication;
 using Infrastructure.Handlers;
 using Recipient.Extensions;
@@ -18,12 +17,7 @@ builder.Services.AddServices();
 builder.Services.AddAuthentication("BasicAuthentication")
                .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
 var env = builder.Environment;
-var sharedFolder = Path.Combine(env.ContentRootPath, "..", "Shared");
-builder.Configuration.AddJsonFile(Path.Combine(sharedFolder, "SharedSettings.json"), optional: true)
-.AddJsonFile("SharedSettings.json", optional: true)
-.AddJsonFile("appsettings.json", optional: true)
-.AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
-.AddEnvironmentVariables();
+builder.Configuration.AddConfigurationFiles(env.ContentRootPath, env.EnvironmentName);
 
 builder.Services.Configure<Domain.Shared.SharedSettings>(builder.Configuration.GetSection("SharedSettings"));
 

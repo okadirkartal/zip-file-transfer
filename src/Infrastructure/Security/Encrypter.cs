@@ -17,39 +17,37 @@ namespace Infrastructure.Security.Cryptor
         {
             if (string.IsNullOrEmpty(data)) return string.Empty;
 
-            using (Aes aes = Aes.Create())
+            using Aes aes = Aes.Create();
+            aes.Key = _cryptoKey;
+            aes.Mode = CipherMode;
+            aes.BlockSize = 128;
+            aes.Padding = Padding;
+
+            aes.GenerateIV();
+
+            byte[] encrypted;
+
+            using (var memoryStream = new MemoryStream())
             {
-                aes.Key = _cryptoKey;
-                aes.Mode = CipherMode;
-                aes.BlockSize = 128;
-                aes.Padding = Padding;
-
-                aes.GenerateIV();
-
-                byte[] encrypted;
-
-                using (var memoryStream = new MemoryStream())
+                await using (var cryptoStream =
+                             new CryptoStream(memoryStream, aes.CreateEncryptor(), CryptoStreamMode.Write))
                 {
-                    using (var cryptoStream =
-                        new CryptoStream(memoryStream, aes.CreateEncryptor(), CryptoStreamMode.Write))
+                    await using (var streamWriter = new StreamWriter(cryptoStream))
                     {
-                        using (var streamWriter = new StreamWriter(cryptoStream))
-                        {
-                            await streamWriter.WriteAsync(data);
-                        }
-
-                        encrypted = memoryStream.ToArray();
+                        await streamWriter.WriteAsync(data);
                     }
+
+                    encrypted = memoryStream.ToArray();
                 }
-
-                var combinedIVCT = new byte[aes.IV.Length + encrypted.Length];
-
-                Array.Copy(aes.IV, 0, combinedIVCT, 0, aes.IV.Length);
-
-                Array.Copy(encrypted, 0, combinedIVCT, aes.IV.Length, encrypted.Length);
-
-                return Convert.ToBase64String(combinedIVCT);
             }
+
+            var combinedIvct = new byte[aes.IV.Length + encrypted.Length];
+
+            Array.Copy(aes.IV, 0, combinedIvct, 0, aes.IV.Length);
+
+            Array.Copy(encrypted, 0, combinedIvct, aes.IV.Length, encrypted.Length);
+
+            return Convert.ToBase64String(combinedIvct);
         }
     }
 }
