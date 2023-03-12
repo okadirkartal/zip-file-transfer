@@ -1,13 +1,10 @@
-﻿
-
-
-
+﻿using Domain.Shared;
+using Infrastructure.Extensions;
+using Infrastructure.Handlers;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting; 
-using Infrastructure.Extensions;
-using Microsoft.AspNetCore.Authentication;
-using Infrastructure.Handlers;
+using Microsoft.Extensions.Hosting;
 using Recipient.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,12 +12,11 @@ builder.Services.AddControllers();
 builder.Services.ConfigureCors();
 builder.Services.AddServices();
 builder.Services.AddAuthentication("BasicAuthentication")
-               .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
+    .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
 var env = builder.Environment;
 builder.Configuration.AddConfigurationFiles(env.ContentRootPath, env.EnvironmentName);
 
-builder.Services.Configure<Domain.Shared.SharedSettings>(builder.Configuration.GetSection("SharedSettings"));
-
+builder.Services.Configure<SharedSettings>(builder.Configuration.GetSection("SharedSettings"));
 
 
 var app = builder.Build();
@@ -38,8 +34,7 @@ else
 
 app.UseHttpsRedirection();
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    "default",
+    "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
-

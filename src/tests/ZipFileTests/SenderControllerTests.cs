@@ -10,55 +10,52 @@ using NUnit.Framework;
 using Sender.Controllers;
 using Sender.Services.Contracts;
 
-namespace tests.ZipFileTests
+namespace tests.ZipFileTests;
+
+public class SenderControllerTests
 {
+    private readonly IEncrypter _encrypter;
 
-    public class SenderControllerTests
+    private readonly IFormFile _file;
+
+    private readonly IFileManagementService _fileManagementService;
+    private readonly SenderController _senderController;
+
+    private readonly ITransferService _transferService;
+
+    private readonly IZipManagementService _zipManagementService;
+
+    public SenderControllerTests()
     {
-        private readonly SenderController _senderController;
+        _transferService = Substitute.For<ITransferService>();
 
-        private readonly ITransferService _transferService;
+        _zipManagementService = Substitute.For<IZipManagementService>();
 
-        private readonly IZipManagementService _zipManagementService;
+        _fileManagementService = Substitute.For<IFileManagementService>();
 
-        private readonly IFileManagementService _fileManagementService;
+        _encrypter = Substitute.For<IEncrypter>();
 
-        private readonly IEncrypter _encrypter;
+        _file = Substitute.For<IFormFile>();
 
-        private readonly IFormFile _file;
+        _senderController = new SenderController(_fileManagementService, _zipManagementService, _encrypter,
+            _transferService);
+    }
 
-        public SenderControllerTests()
-        {
-            _transferService = Substitute.For<ITransferService>();
-
-            _zipManagementService = Substitute.For<IZipManagementService>();
-
-            _fileManagementService = Substitute.For<IFileManagementService>();
-
-            _encrypter = Substitute.For<IEncrypter>();
-
-            _file = Substitute.For<IFormFile>();
-
-            _senderController = new SenderController(_fileManagementService, _zipManagementService, _encrypter,
-                _transferService);
-        }
-
-        [Test]
-        public void CreateConstructor_WhenArgumentIsNull_ThrowsArgumentNullException()
-        {
-            // act & assert
-            Assert.Throws<ArgumentNullException>(() => new SenderController(null, null, null, null));
-        }
+    [Test]
+    public void CreateConstructor_WhenArgumentIsNull_ThrowsArgumentNullException()
+    {
+        // act & assert
+        Assert.Throws<ArgumentNullException>(() => new SenderController(null, null, null, null));
+    }
 
 
-        [Test]
-        public async Task PostToRecipientAsync_WhenArgumentIsNull_ReturnsBadRequest()
-        {
-            // act
-            var result = await _senderController.Index(null);
+    [Test]
+    public async Task PostToRecipientAsync_WhenArgumentIsNull_ReturnsBadRequest()
+    {
+        // act
+        var result = await _senderController.Index(null);
 
-            // assert
-            result.Should().BeOfType(typeof(BadRequestResult));
-        }
+        // assert
+        result.Should().BeOfType(typeof(BadRequestResult));
     }
 }

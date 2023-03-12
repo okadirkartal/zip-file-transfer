@@ -1,4 +1,5 @@
-namespace Domain.Entities; 
+namespace Domain.Entities;
+
 public class TransferModel : UserModel
 {
     public string Id { get; set; }

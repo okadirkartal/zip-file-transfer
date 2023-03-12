@@ -7,55 +7,54 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace Infrastructure.Handlers
+namespace Infrastructure.Handlers;
+
+public class BasicAuthenticationHandler : AuthenticationHandler<AuthenticationSchemeOptions>
 {
-    public class BasicAuthenticationHandler : AuthenticationHandler<AuthenticationSchemeOptions>
+    private readonly IUserService _userService;
+
+    public BasicAuthenticationHandler(
+        IOptionsMonitor<AuthenticationSchemeOptions> options,
+        ILoggerFactory logger,
+        UrlEncoder encoder,
+        ISystemClock clock,
+        IUserService userService)
+        : base(options, logger, encoder, clock)
     {
-        private readonly IUserService _userService;
+        _userService = userService;
+    }
 
-        public BasicAuthenticationHandler(
-            IOptionsMonitor<AuthenticationSchemeOptions> options,
-            ILoggerFactory logger,
-            UrlEncoder encoder,
-            ISystemClock clock,
-            IUserService userService)
-            : base(options, logger, encoder, clock)
+    protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
+    {
+        if (!Request.Headers.ContainsKey("Authorization"))
+            return AuthenticateResult.Fail("Missing Authorization Header");
+
+        UserModel? user = null;
+        try
         {
-            _userService = userService;
+            var authHeader = AuthenticationHeaderValue.Parse(Request.Headers["Authorization"]);
+            var credentials = authHeader.Parameter.Split(':');
+            var username = credentials[0];
+            var password = credentials[1];
+            user = await _userService.AuthenticateAsync(username, password);
+            if (user == null)
+                return await Task.FromResult(AuthenticateResult.Fail("Invalid Username or Password"));
+        }
+        catch
+        {
+            return await Task.FromResult(AuthenticateResult.Fail("Invalid Authorization Header"));
         }
 
-        protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
+
+        var claims = new[]
         {
-            if (!Request.Headers.ContainsKey("Authorization"))
-                return AuthenticateResult.Fail("Missing Authorization Header");
+            new Claim(ClaimTypes.Name, user.UserName),
+            new Claim(ClaimTypes.UserData, user.Password)
+        };
 
-            UserModel? user = null;
-            try
-            {
-                var authHeader = AuthenticationHeaderValue.Parse(Request.Headers["Authorization"]);
-                var credentials = authHeader.Parameter.Split(':');
-                var username = credentials[0];
-                var password = credentials[1];
-                user = await _userService.AuthenticateAsync(username, password);
-                if (user == null)
-                    return await Task.FromResult(AuthenticateResult.Fail("Invalid Username or Password"));
-            }
-            catch
-            {
-                return await Task.FromResult(AuthenticateResult.Fail("Invalid Authorization Header"));
-            }
- 
+        var identity = new ClaimsIdentity(claims, Scheme.Name);
+        var principal = new ClaimsPrincipal(identity);
 
-            var claims = new[]
-            {
-                new Claim(ClaimTypes.Name, user.UserName),
-                new Claim(ClaimTypes.UserData, user.Password),
-            };
-
-            var identity = new ClaimsIdentity(claims, Scheme.Name);
-            var principal = new ClaimsPrincipal(identity); 
-
-            return await Task.FromResult(AuthenticateResult.Success(new AuthenticationTicket(principal, Scheme.Name)));
-        }
+        return await Task.FromResult(AuthenticateResult.Success(new AuthenticationTicket(principal, Scheme.Name)));
     }
 }

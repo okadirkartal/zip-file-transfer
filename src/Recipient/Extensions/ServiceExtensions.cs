@@ -4,26 +4,25 @@ using Infrastructure.Security;
 using Infrastructure.Security.Contracts;
 using Infrastructure.Services;
 using Infrastructure.Services.Contracts;
-using Microsoft.Extensions.DependencyInjection; 
+using Microsoft.Extensions.DependencyInjection;
 
-namespace Recipient.Extensions
+namespace Recipient.Extensions;
+
+public static class ServiceExtensions
 {
-    public static class ServiceExtensions
+    public static void ConfigureCors(this IServiceCollection services)
     {
-        public static void ConfigureCors(this IServiceCollection services)
+        services.AddCors(options =>
         {
-            services.AddCors(options =>
-            {
-                options.AddPolicy("CorsPolicy",
-                    builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowCredentials());
-            });
-        }
+            options.AddPolicy("CorsPolicy",
+                builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowCredentials());
+        });
+    }
 
-        public static void AddServices(this IServiceCollection services)
-        {
-            services.AddTransient<IDecrypter, Decrypter>();
-            services.AddTransient<IUserService, UserService>();
-            services.AddTransient<IDocumentPersistenceService, DocumentPersistenceService>();
-        }
+    public static void AddServices(this IServiceCollection services)
+    {
+        services.AddTransient<IDecrypter, Decrypter>();
+        services.AddTransient<IUserService, UserService>();
+        services.AddTransient<IDocumentPersistenceService, DocumentPersistenceService>();
     }
 }

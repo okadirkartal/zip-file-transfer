@@ -1,34 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks; 
-using Domain.Entities;
-using Microsoft.AspNetCore.Mvc;
-using Sender.Models;
-using Sender.Services.Contracts; 
 using System.ComponentModel.DataAnnotations;
+using System.Threading.Tasks;
+using Domain.Entities;
 using Infrastructure.Security.Contracts;
 using Infrastructure.Services.Contracts;
+using Microsoft.AspNetCore.Mvc;
+using Sender.Models;
+using Sender.Services.Contracts;
 
 namespace Sender.Controllers;
+
 public class SenderController : Controller
 {
+    private readonly IEncrypter _encrypter;
     private readonly IFileManagementService _fileManagementService;
 
-    private readonly IZipManagementService _zipManagementService;
-
-    private readonly IEncrypter _encrypter;
-
     private readonly ITransferService _transferService;
+
+    private readonly IZipManagementService _zipManagementService;
 
     public SenderController(IFileManagementService fileManagementService,
         IZipManagementService zipManagementService,
         IEncrypter encrypter, ITransferService transferService)
     {
-        this._transferService = transferService ?? throw new ArgumentNullException(nameof(transferService));
-        this._encrypter = encrypter ?? throw new ArgumentNullException(nameof(encrypter));
-        this._fileManagementService =
+        _transferService = transferService ?? throw new ArgumentNullException(nameof(transferService));
+        _encrypter = encrypter ?? throw new ArgumentNullException(nameof(encrypter));
+        _fileManagementService =
             fileManagementService ?? throw new ArgumentNullException(nameof(fileManagementService));
-        this._zipManagementService =
+        _zipManagementService =
             zipManagementService ?? throw new ArgumentNullException(nameof(zipManagementService));
     }
 
@@ -41,7 +41,7 @@ public class SenderController : Controller
     public async Task<IActionResult> Index([Required] UploadViewModel model)
     {
         if (model == null) return BadRequest();
-        
+
         if (ModelState.IsValid)
         {
             var savedResult = await _fileManagementService.SaveZipFileToLocalFolder(model.File);
@@ -53,7 +53,7 @@ public class SenderController : Controller
                 // var encryptedData = await _encrypter.EncryptAsync(result);
 
                 var response = await _transferService.PostToRecipientAsync(
-                    new TransferModel()
+                    new TransferModel
                     {
                         UserName = await _encrypter.EncryptAsync(model.UserName),
                         Password = await _encrypter.EncryptAsync(model.Password),
@@ -63,13 +63,13 @@ public class SenderController : Controller
                 if (response == null)
                     return View("Result", new ResultViewModel
                     {
-                        Errors = new List<ErrorModel>()
+                        Errors = new List<ErrorModel>
+                        {
+                            new()
                             {
-                                new ErrorModel()
-                                {
-                                    ErrorMessage = "Authentication Error : Invalid username or password"
-                                }
+                                ErrorMessage = "Authentication Error : Invalid username or password"
                             }
+                        }
                     });
                 return View("Result", response);
             }

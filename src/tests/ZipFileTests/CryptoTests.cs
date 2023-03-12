@@ -4,54 +4,51 @@ using Infrastructure.Security.Contracts;
 using Infrastructure.Security.Cryptor;
 using Microsoft.Extensions.Configuration;
 using NSubstitute;
-using NUnit.Framework; 
+using NUnit.Framework;
 
+namespace tests.ZipFileTests;
 
-namespace tests.ZipFileTests
+public class EncryptAndDecryptTests
 {
-    public class EncryptAndDecryptTests
+    private IConfiguration _configuration;
+
+    private IDecrypter _decrypter;
+    private IEncrypter _encrypter;
+
+    [SetUp]
+    public void SetUp()
     {
-        private IEncrypter _encrypter;
+        _configuration = Substitute.For<IConfiguration>();
 
-        private IDecrypter _decrypter;
+        _configuration["Security:CryptoKey"].Returns("8137081371813720");
 
-        private IConfiguration _configuration;
+        _encrypter = new Encrypter(_configuration);
 
-        [SetUp]
-        public void SetUp()
-        {
-            _configuration = Substitute.For<IConfiguration>();
+        _decrypter = new Decrypter(_configuration);
+    }
 
-            _configuration["Security:CryptoKey"].Returns("8137081371813720");
+    [TestCase("kartal")]
+    [TestCase("810123481")]
+    [TestCase("!@EST@N!A")]
+    public async Task SetSomeData_WhenCryptoIsCorrect_ReturnsTrue(string data)
+    {
+        var encryptedData = await _encrypter.EncryptAsync(data);
 
-            _encrypter = new Encrypter(_configuration);
+        var decryptedData = await _decrypter.DecryptAsync(encryptedData);
 
-            _decrypter = new Decrypter(_configuration);
-        }
-
-        [TestCase("kartal")]
-        [TestCase("810123481")]
-        [TestCase("!@EST@N!A")]
-        public async Task SetSomeData_WhenCryptoIsCorrect_ReturnsTrue(string data)
-        {
-            string encryptedData = await _encrypter.EncryptAsync(data);
-
-            string decryptedData = await _decrypter.DecryptAsync(encryptedData);
-
-            Assert.AreEqual(data, decryptedData);
-        }
+        Assert.AreEqual(data, decryptedData);
+    }
 
 
-        [TestCase("kartal")]
-        [TestCase("810123481")]
-        [TestCase("!@EST@N!A")]
-        public async Task SetSomeData_WhenCryptoKeyIsMissing_ReturnsTrue(string data)
-        {
-            string encryptedData = await _encrypter.EncryptAsync(data);
+    [TestCase("kartal")]
+    [TestCase("810123481")]
+    [TestCase("!@EST@N!A")]
+    public async Task SetSomeData_WhenCryptoKeyIsMissing_ReturnsTrue(string data)
+    {
+        var encryptedData = await _encrypter.EncryptAsync(data);
 
-            string decryptedData = await _decrypter.DecryptAsync(encryptedData);
+        var decryptedData = await _decrypter.DecryptAsync(encryptedData);
 
-            Assert.AreEqual(data, decryptedData);
-        }
+        Assert.AreEqual(data, decryptedData);
     }
 }

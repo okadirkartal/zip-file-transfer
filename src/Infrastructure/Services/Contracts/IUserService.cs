@@ -1,10 +1,8 @@
-
 using Domain.Entities;
 
-namespace Infrastructure.Services.Contracts
+namespace Infrastructure.Services.Contracts;
+
+public interface IUserService
 {
-    public interface IUserService
-    {
-        Task<UserModel?> AuthenticateAsync(string username, string password);
-    }
+    Task<UserModel?> AuthenticateAsync(string username, string password);
 }

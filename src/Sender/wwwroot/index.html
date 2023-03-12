@@ -2,7 +2,7 @@
 <head>
     <link href="json-tree/css/jsontree.css" rel="stylesheet">
     <script src="json-tree/js/jsontree.js"></script>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" id="bootstrap-css" rel="stylesheet">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!------ Include the above in your HEAD tag ---------->
@@ -10,15 +10,14 @@
 </head>
 <body>
 
- 
 
 </body>
 <script>
-    var data ="{\"_id\":\"b8f4537ba2264e3086e51793e3a6fac4\",\"JsonData\":{\"itemName\":\"uml-diagram20190518200612\",\"subItems\":[{\"itemName\":\"uml-diagram20190518200612\",\"subItems\":[{\"itemName\":\"__MACOSX\",\"subItems\":[{\"itemName\":\"._uml-diagram.png\",\"subItems\":[]}]},{\"itemName\":\"uml-diagram.png\",\"subItems\":[]}]}]}}";
+    var data = "{\"_id\":\"b8f4537ba2264e3086e51793e3a6fac4\",\"JsonData\":{\"itemName\":\"uml-diagram20190518200612\",\"subItems\":[{\"itemName\":\"uml-diagram20190518200612\",\"subItems\":[{\"itemName\":\"__MACOSX\",\"subItems\":[{\"itemName\":\"._uml-diagram.png\",\"subItems\":[]}]},{\"itemName\":\"uml-diagram.png\",\"subItems\":[]}]}]}}";
 
-    var json=JSON.parse(data);
+    var json = JSON.parse(data);
     var result = JSONTree.create(json);
-    
+
     document.getElementById("example").innerHTML = result;
 
 </script>

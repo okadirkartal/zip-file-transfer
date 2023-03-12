@@ -1,20 +1,21 @@
- 
 using Domain.Entities;
 using Infrastructure.Persistence.Contracts;
 using LiteDB;
-using Microsoft.Extensions.Configuration; 
+using Microsoft.Extensions.Configuration;
 
 namespace Infrastructure.Persistence;
+
 public class DocumentPersistenceService : IDocumentPersistenceService
 {
-    private readonly IConfiguration _configuration; 
+    private readonly IConfiguration _configuration;
 
     private readonly string _liteDbConnectionString;
-    
+
     public DocumentPersistenceService(IConfiguration configuration)
     {
-        this._configuration = configuration;
-        _liteDbConnectionString = _configuration["Storage:ConnectionString"] ?? throw  new ArgumentNullException("ConnectionString not found");
+        _configuration = configuration;
+        _liteDbConnectionString = _configuration["Storage:ConnectionString"] ??
+                                  throw new ArgumentNullException("ConnectionString not found");
     }
 
     public BsonValue SaveDocument(DirectoryModel data)
@@ -23,7 +24,7 @@ public class DocumentPersistenceService : IDocumentPersistenceService
         var col = db.GetCollection<TransferModel>(nameof(TransferModel));
 
         var model = new TransferModel { Id = Guid.NewGuid().ToString().Replace("-", ""), JsonData = data };
-        
+
         col.EnsureIndex(x => x.Id, true);
 
         return col.Insert(model);

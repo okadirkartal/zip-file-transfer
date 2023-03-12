@@ -1,8 +1,6 @@
- 
-namespace Infrastructure.Security.Contracts
+namespace Infrastructure.Security.Contracts;
+
+public interface IDecrypter
 {
-    public interface IDecrypter
-    {
-        Task<string> DecryptAsync(string data);
-    }
+    Task<string> DecryptAsync(string data);
 }
