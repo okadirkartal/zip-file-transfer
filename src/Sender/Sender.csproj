@@ -3,7 +3,7 @@
         <TargetFramework>net7.0</TargetFramework>
     </PropertyGroup>
     <ItemGroup>
-        <Folder Include="uploads" />
+        <Folder Include="uploads\extractedZipFiles\" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\Domain\Domain.csproj" />
