@@ -1,12 +1,13 @@
 using System.Security.Cryptography;
-using Infrastructure.Security.Contracts;
-using Microsoft.Extensions.Configuration;
+using Domain.Entities;
+using Infrastructure.Security.Contracts; 
+using Microsoft.Extensions.Options;
 
 namespace Infrastructure.Security;
 
-public class Decrypter : BaseCryptor, IDecrypter
+public sealed class Decrypter : BaseCryptor, IDecrypter
 {
-    public Decrypter(IConfiguration configuration) : base(configuration)
+    public Decrypter(IOptions<ApplicationOptions> options) : base(options)
     {
     }
 
@@ -18,7 +19,7 @@ public class Decrypter : BaseCryptor, IDecrypter
 
         using (var aes = Aes.Create())
         {
-            aes.Key = _cryptoKey;
+            aes.Key = CryptoKey;
 
             aes.Mode = CipherMode.ECB;
 

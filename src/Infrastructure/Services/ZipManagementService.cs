@@ -3,18 +3,19 @@ using Domain.Entities;
 using Infrastructure.Security.Contracts;
 using Infrastructure.Services.Contracts;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
 namespace Infrastructure.Services;
 
 public class ZipManagementService : IZipManagementService
 {
-    private readonly IConfiguration _configuration;
+    private readonly UploadSettings _uploadSettings;
     private readonly IEncrypter _encrypter;
 
-    public ZipManagementService(IConfiguration configuration,
+    public ZipManagementService(IOptions<ApplicationOptions> options,
         IEncrypter encrypter)
     {
-        _configuration = configuration;
+        _uploadSettings = options.Value.UploadSettings;
         _encrypter = encrypter;
     }
 
@@ -27,7 +28,7 @@ public class ZipManagementService : IZipManagementService
     private string UnzipFileToGivenPath(string savedZipFilePath)
     {
         using var zipFile = ZipFile.OpenRead(savedZipFilePath);
-        var saveablePath = Path.Combine(_configuration["UploadSettings:ZipPath"] ?? string.Empty,
+        var saveablePath = Path.Combine(_uploadSettings.ZipPath ?? string.Empty,
             Path.GetFileNameWithoutExtension(savedZipFilePath));
 
         zipFile.ExtractToDirectory(saveablePath, true);

@@ -1,16 +1,16 @@
 ﻿using System.Threading.Tasks;
+using Domain.Entities;
 using Infrastructure.Security;
 using Infrastructure.Security.Contracts;
-using Infrastructure.Security.Cryptor;
-using Microsoft.Extensions.Configuration;
-using NSubstitute;
+using Infrastructure.Security.Cryptor; 
+using Microsoft.Extensions.Options; 
 using NUnit.Framework;
 
 namespace tests.ZipFileTests;
 
 public class EncryptAndDecryptTests
 {
-    private IConfiguration _configuration;
+    private IOptions<ApplicationOptions> _options;
 
     private IDecrypter _decrypter;
     private IEncrypter _encrypter;
@@ -18,13 +18,14 @@ public class EncryptAndDecryptTests
     [SetUp]
     public void SetUp()
     {
-        _configuration = Substitute.For<IConfiguration>();
+        _options = Options.Create(new ApplicationOptions
+        {
+            Security = new Security { CryptoKey = "8137081371813720" }
+        });
+       
+        _encrypter = new Encrypter(_options);
 
-        _configuration["Security:CryptoKey"].Returns("8137081371813720");
-
-        _encrypter = new Encrypter(_configuration);
-
-        _decrypter = new Decrypter(_configuration);
+        _decrypter = new Decrypter(_options);
     }
 
     [TestCase("kartal")]

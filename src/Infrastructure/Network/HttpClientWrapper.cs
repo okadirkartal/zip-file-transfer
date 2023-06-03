@@ -7,7 +7,7 @@ namespace Infrastructure.Network;
 
 public class HttpClientWrapper : IHttpClientWrapper
 {
-    private readonly IHttpClientFactory _httpClientFactory = null!;
+    private readonly IHttpClientFactory _httpClientFactory;
 
     public HttpClientWrapper(IHttpClientFactory httpClientFactory)
     {
@@ -27,25 +27,25 @@ public class HttpClientWrapper : IHttpClientWrapper
 
         var content = JsonContent.Create(dto);
 
-        using var _client = _httpClientFactory.CreateClient();
-        InitializeCredentials(_client);
-        var responseMessage = await _client.PostAsync(_client.BaseAddress, content);
+        using var client = _httpClientFactory.CreateClient();
+        InitializeCredentials(client);
+        var responseMessage = await client.PostAsync(client.BaseAddress, content);
 
         var data = await responseMessage.Content.ReadAsStringAsync();
 
         return JsonSerializer.Deserialize<TResponseDto>(data);
     }
 
-    private HttpClient InitializeCredentials(HttpClient _client)
+    private HttpClient InitializeCredentials(HttpClient client)
     {
-        _client.BaseAddress = new Uri(BaseUrl);
+        client.BaseAddress = new Uri(BaseUrl);
 
-        _client.DefaultRequestHeaders.Accept.Add(
+        client.DefaultRequestHeaders.Accept.Add(
             new MediaTypeWithQualityHeaderValue("application/json"));
 
-        _client.DefaultRequestHeaders.Authorization =
+        client.DefaultRequestHeaders.Authorization =
             new AuthenticationHeaderValue(AuthorizationHeader, AuthorizationValue);
 
-        return _client;
+        return client;
     }
 }

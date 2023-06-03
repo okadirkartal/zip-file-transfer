@@ -3,15 +3,14 @@ using System.IO;
 using Domain.Entities;
 using Infrastructure.Persistence;
 using Infrastructure.Persistence.Contracts;
-using Microsoft.Extensions.Configuration;
-using NSubstitute;
+using Microsoft.Extensions.Options;
 using NUnit.Framework;
 
 namespace tests.ZipFileTests;
 
 public class DocumentPersistenceTests
 {
-    private IConfiguration _configuration;
+    private IOptions<ApplicationOptions> _options;
     private IDocumentPersistenceService _documentPersistenceService;
 
     private string bsonDocumentId;
@@ -19,12 +18,13 @@ public class DocumentPersistenceTests
     [SetUp]
     public void SetUp()
     {
-        _configuration = Substitute.For<IConfiguration>();
+        _options = Options.Create(new ApplicationOptions
+        {
+            Storage = new Storage
+                { ConnectionString = "FileName=../../../Data/Documents.db;Timeout=10; Journal=false;Mode=Exclusive" }
+        });
 
-        var dbPath = "../../../Data/Documents.db";
-
-        _configuration["Storage:ConnectionString"]
-            .Returns("FileName=../../../Data/Documents.db;Timeout=10; Journal=false;Mode=Exclusive");
+        var dbPath = "../../../Data/Documents.db"; 
 
 
         if (!File.Exists(dbPath))
@@ -33,7 +33,7 @@ public class DocumentPersistenceTests
             File.Create(dbPath);
         }
 
-        _documentPersistenceService = new DocumentPersistenceService(_configuration);
+        _documentPersistenceService = new DocumentPersistenceService(_options);
     }
 
     [Test]

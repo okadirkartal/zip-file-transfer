@@ -1,18 +1,18 @@
 using System.IO;
 using System.IO.Compression;
 using System.Threading.Tasks;
+using Domain.Entities;
 using Infrastructure.Security.Contracts;
 using Infrastructure.Security.Cryptor;
 using Infrastructure.Services;
-using Microsoft.Extensions.Configuration;
-using NSubstitute;
+using Microsoft.Extensions.Options;
 using NUnit.Framework;
 
 namespace tests.ZipFileTests;
 
 public class ZipFileManagementTests
 {
-    private IConfiguration _configuration;
+    private IOptions<ApplicationOptions> _options;
 
     private IEncrypter _encrypter;
 
@@ -26,18 +26,20 @@ public class ZipFileManagementTests
     [SetUp]
     public void SetUp()
     {
-        _configuration = Substitute.For<IConfiguration>();
+        _options = Options.Create(new ApplicationOptions
+        {
+            UploadSettings = new UploadSettings { ZipPath = "zipFiles"},
+            Security = new Security { CryptoKey = "8137081371813720"}
+        });
 
-        _configuration["UploadPaths:ZipPath"].Returns("zipFiles");
-        _configuration["Security:CryptoKey"].Returns("8137081371813720");
 
         zipFilePath = Path.Combine(zipFileDirectory,
-            _configuration["UploadPaths:ZipPath"]);
+           _options.Value.UploadSettings.ZipPath);
 
         if (!Directory.Exists(zipFilePath))
             Directory.CreateDirectory(zipFilePath);
 
-        _encrypter = new Encrypter(_configuration);
+        _encrypter = new Encrypter(_options);
     }
 
     [Test]
@@ -69,7 +71,7 @@ public class ZipFileManagementTests
             }
         }
 
-        _zipManagementService = new ZipManagementService(_configuration, _encrypter);
+        _zipManagementService = new ZipManagementService(_options, _encrypter);
 
         var directoryModel = await _zipManagementService.GetSerializedDirectoryStructure(zipFile);
 

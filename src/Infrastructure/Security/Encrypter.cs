@@ -1,14 +1,15 @@
 using System.Security.Cryptography;
-using Infrastructure.Security.Contracts;
-using Microsoft.Extensions.Configuration;
+using Domain.Entities;
+using Infrastructure.Security.Contracts; 
+using Microsoft.Extensions.Options;
 
 namespace Infrastructure.Security.Cryptor;
 
-public class Encrypter : BaseCryptor, IEncrypter
+public sealed class Encrypter : BaseCryptor, IEncrypter
 {
     private const CipherMode CipherMode = System.Security.Cryptography.CipherMode.ECB;
 
-    public Encrypter(IConfiguration configuration) : base(configuration)
+    public Encrypter(IOptions<ApplicationOptions> options) : base(options)
     {
     }
 
@@ -17,7 +18,7 @@ public class Encrypter : BaseCryptor, IEncrypter
         if (string.IsNullOrEmpty(data)) return string.Empty;
 
         using var aes = Aes.Create();
-        aes.Key = _cryptoKey;
+        aes.Key = CryptoKey;
         aes.Mode = CipherMode;
         aes.BlockSize = 128;
         aes.Padding = Padding;

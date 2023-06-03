@@ -1,6 +1,6 @@
 namespace Domain.Entities;
 
-public class DirectoryModel
+public sealed class DirectoryModel
 {
     [NonSerialized] public string _itemNameFlat;
 

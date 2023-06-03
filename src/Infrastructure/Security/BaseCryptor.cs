@@ -1,16 +1,17 @@
 using System.Security.Cryptography;
 using System.Text;
-using Microsoft.Extensions.Configuration;
+using Domain.Entities; 
+using Microsoft.Extensions.Options;
 
 namespace Infrastructure.Security;
 
 public class BaseCryptor
 {
     protected const PaddingMode Padding = PaddingMode.PKCS7;
-    protected readonly byte[] _cryptoKey;
+    protected readonly byte[] CryptoKey;
 
-    protected BaseCryptor(IConfiguration configuration)
+    protected BaseCryptor(IOptions<ApplicationOptions> options)
     {
-        _cryptoKey = Encoding.UTF8.GetBytes(configuration["Security:CryptoKey"] ?? "81T1A2L3L4I5NN18");
+        CryptoKey = Encoding.UTF8.GetBytes(options.Value.Security.CryptoKey ?? "81T1A2L3L4I5NN18");
     }
 }

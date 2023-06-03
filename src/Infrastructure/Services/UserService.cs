@@ -1,19 +1,19 @@
 using Domain.Entities;
 using Infrastructure.Security.Contracts;
 using Infrastructure.Services.Contracts;
-using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
 namespace Infrastructure.Services;
 
 public class UserService : IUserService
 {
-    private readonly IConfiguration _configuration;
+    private readonly Credentials _credentials;
 
     private readonly IDecrypter _decrypter;
 
-    public UserService(IConfiguration configuration, IDecrypter decrypter)
+    public UserService(IOptions<ApplicationOptions> options, IDecrypter decrypter)
     {
-        _configuration = configuration;
+        _credentials = options.Value.Credentials;
         _decrypter = decrypter;
     }
 
@@ -24,9 +24,9 @@ public class UserService : IUserService
             UserName = await _decrypter.DecryptAsync(username),
             Password = await _decrypter.DecryptAsync(password)
         };
-        return _configuration["Credentials:UserName"] == user.UserName
+        return _credentials.UserName == user.UserName
                &&
-               _configuration["Credentials:Password"] == user.Password
+              _credentials.Password == user.Password
             ? user
             : null;
     }

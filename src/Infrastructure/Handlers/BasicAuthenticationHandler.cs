@@ -33,10 +33,11 @@ public class BasicAuthenticationHandler : AuthenticationHandler<AuthenticationSc
         try
         {
             var authHeader = AuthenticationHeaderValue.Parse(Request.Headers["Authorization"]);
-            var credentials = authHeader.Parameter.Split(':');
-            var username = credentials[0];
-            var password = credentials[1];
-            user = await _userService.AuthenticateAsync(username, password);
+            var credentials = authHeader.Parameter?.Split(':');
+            var username = credentials?[0];
+            var password = credentials?[1];
+            if (username != null && password != null)
+                    user = await _userService.AuthenticateAsync(username, password);
             if (user == null)
                 return await Task.FromResult(AuthenticateResult.Fail("Invalid Username or Password"));
         }

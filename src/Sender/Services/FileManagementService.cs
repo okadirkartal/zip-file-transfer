@@ -1,10 +1,10 @@
 using System;
 using System.IO;
 using System.Threading.Tasks;
+using Domain.Entities;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
-using Sender.Models;
 using Sender.Services.Contracts;
 
 namespace Sender.Services;
@@ -12,18 +12,18 @@ namespace Sender.Services;
 public class FileManagementService : IFileManagementService
 {
     private readonly string _contentRootPath;
-    private readonly UploadSettings _settings;
+    private readonly string zipPath;
 
-    public FileManagementService(IOptions<UploadSettings> settings, IWebHostEnvironment environment)
+    public FileManagementService(IOptions<ApplicationOptions> options, IWebHostEnvironment environment)
     {
-        _settings = settings.Value;
+        zipPath = options.Value.UploadSettings.ZipPath;
         _contentRootPath = environment.ContentRootPath;
     }
 
     public async Task<(bool result, string savedFilePath)> SaveZipFileToLocalFolder(IFormFile file)
     {
         var combinedPath =
-            Path.Combine(_contentRootPath, _settings.ZipPath);
+            Path.Combine(_contentRootPath, zipPath);
 
         if (!Directory.Exists(combinedPath))
             Directory.CreateDirectory(combinedPath);
