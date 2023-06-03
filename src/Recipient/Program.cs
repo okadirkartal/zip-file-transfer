@@ -1,4 +1,4 @@
-﻿using Domain.Shared;
+﻿using Domain.Entities;
 using Infrastructure.Extensions;
 using Infrastructure.Handlers;
 using Microsoft.AspNetCore.Authentication;
@@ -16,7 +16,7 @@ builder.Services.AddAuthentication("BasicAuthentication")
 var env = builder.Environment;
 builder.Configuration.AddConfigurationFiles(env.ContentRootPath, env.EnvironmentName);
 
-builder.Services.Configure<SharedSettings>(builder.Configuration.GetSection("SharedSettings"));
+builder.Services.Configure<ApplicationOptions>(builder.Configuration.GetSection(nameof(ApplicationOptions)));
 
 
 var app = builder.Build();

@@ -1,6 +1,6 @@
 namespace Domain.Entities;
 
-public class ResultViewModel
+public sealed class ResultViewModel
 {
     public ResultViewModel()
     {

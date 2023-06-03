@@ -19,6 +19,7 @@ public class SenderControllerTests
     private readonly IFormFile _file;
 
     private readonly IFileManagementService _fileManagementService;
+    
     private readonly SenderController _senderController;
 
     private readonly ITransferService _transferService;

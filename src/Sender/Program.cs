@@ -1,22 +1,22 @@
-﻿using Domain.Shared;
+﻿
+using Domain.Entities;
 using Infrastructure.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Sender.Extensions;
-using Sender.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddServices();
 builder.Configuration.AddConfigurationFiles(builder.Environment.ContentRootPath, builder.Environment.EnvironmentName);
 
-builder.Services.AddOptions<UploadSettings>()
-    .BindConfiguration("UploadSettings")
+builder.Services.AddOptions<ApplicationOptions>()
+    .BindConfiguration(nameof(ApplicationOptions))
     .ValidateDataAnnotations()
     .ValidateOnStart();
 
-builder.Services.Configure<SharedSettings>(builder.Configuration.GetSection("SharedSettings"));
+builder.Services.Configure<ApplicationOptions>(builder.Configuration.GetSection(nameof(ApplicationOptions)));
 
 
 builder.Services.AddControllersWithViews();

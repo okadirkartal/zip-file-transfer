@@ -2,8 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Domain.Entities;
-using Domain.Shared;
+using Domain.Entities; 
 using Infrastructure.Network.Contracts;
 using Microsoft.Extensions.Options;
 using NSubstitute;
@@ -17,16 +16,17 @@ public class TransferServiceTests
 {
     private readonly IHttpClientWrapper _httpClient;
 
-    private readonly IOptions<SharedSettings> _settings;
+    private readonly IOptions<ApplicationOptions> _settings;
+    
     private readonly ITransferService _transferService;
 
     public TransferServiceTests()
     {
         _httpClient = Substitute.For<IHttpClientWrapper>();
 
-        _settings = Options.Create(new SharedSettings
+        _settings = Options.Create(new ApplicationOptions
         {
-            RecipientApi = new RecipientApi { BaseUrl = "http://localhost:5077/api/Recipient/" },
+            RecipientApi = new  RecipientApi {  BaseUrl = "http://localhost:5077/api/Recipient/" },
             Security = new Security { CryptoKey = "8137081371813720", Header = "Authorization" }
         });
 
@@ -45,6 +45,7 @@ public class TransferServiceTests
     {
         var directoryModel = new DirectoryModel
             { _itemNameFlat = "test", item = "test", subItems = new List<DirectoryModel>() };
+       
         var transferModel = new TransferModel
         {
             JsonData = directoryModel,

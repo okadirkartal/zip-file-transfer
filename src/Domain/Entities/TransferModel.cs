@@ -1,6 +1,6 @@
 namespace Domain.Entities;
 
-public class TransferModel : UserModel
+public sealed class TransferModel : UserModel
 {
     public string Id { get; set; }
 
