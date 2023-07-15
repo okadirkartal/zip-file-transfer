@@ -4,5 +4,5 @@ namespace Infrastructure.Services.Contracts;
 
 public interface IUserService
 {
-    Task<UserModel?> AuthenticateAsync(string username, string password);
+    Task<IEnumerable<UserModel>> AuthenticateAsync(string username, string password);
 }

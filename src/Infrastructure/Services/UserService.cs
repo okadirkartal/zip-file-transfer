@@ -17,8 +17,11 @@ public class UserService : IUserService
         _decrypter = decrypter;
     }
 
-    public async Task<UserModel?> AuthenticateAsync(string username, string password)
+    public async Task<IEnumerable<UserModel>> AuthenticateAsync(string username, string password)
     {
+        if(username == null || password == null) 
+            return Enumerable.Empty<UserModel>();
+
         var user = new UserModel
         {
             UserName = await _decrypter.DecryptAsync(username),
@@ -27,7 +30,7 @@ public class UserService : IUserService
         return _credentials.UserName == user.UserName
                &&
               _credentials.Password == user.Password
-            ? user
-            : null;
+            ? new List<UserModel>() { user }
+            : Enumerable.Empty<UserModel>();
     }
 }
